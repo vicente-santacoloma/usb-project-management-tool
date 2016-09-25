@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class ="manage-box">
+
+<h1 style="font-size:20px;"> Procesos de Software </h1>
+
+{% if latest_swp_list %}
+    {% for software_process in latest_swp_list %}
+        <a href="/methodology/read_softwareprocess/{{ software_process.id }}/" class="submit btn primary-btn-softwareprocess">
+			{% if software_process.name == "CF" %}
+				'Code and Fix'
+			{% elif software_process.name == "WA" %}
+				Cascada
+			{% elif software_process.name == "SM" %}
+				Espiral
+			{% elif software_process.name == "II" %}
+				Iterativo Incremental
+			{% else %}
+				Nuevo proceso de software no contemplado para esta version
+			{% endif %} 
+		</a>
+    	</br>
+    {% endfor %}
+{% else %}
+    <h1> Ningún Proceso de Software Disponible </h1>
+{% endif %}
+
+{% endblock %}

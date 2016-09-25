@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class=box>
+
+<form action="." method="POST" >
+	{% csrf_token %}
+	<table>
+	{{ form.as_table }}
+	</table>
+	</br>
+	<button type="submit" class="submit btn primary-btn">Enviar Solicitud</button>
+</form>
+</br>
+</div>
+
+{% endblock %}

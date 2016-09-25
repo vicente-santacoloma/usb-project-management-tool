@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+# Display a list of applications
+# requires a variable 'objects_list' of type query_set
+
+{% block content %}
+
+<div class="manage-box">
+
+<h1 style="font-size:20px;"> Selecciona una opcion </h1>
+</br>
+<a href="/project/create_project/" class="submit btn primary-btn">Crear nuevo proyecto</a>
+<a href="/project/read_role/" class="submit btn primary-btn">Listar roles de proyectos</a>
+</br></br><hr/>
+
+<h1 style="font-size:20px;"> Proyectos que lidero </h1>
+</br>
+
+{% if lider_projects %}
+
+	{% for p in lider_projects %}
+		<a href="/project/read_project/{{p.id}}/" class="submit btn primary-btn">     {{ p.name }} </a>
+		<a href="/activity/manage_activity/{{p.id}}/" class="submit btn primary-btn"> Gestionar    </a>
+		<a href="/project/update_project/{{p.id}}/" class="submit btn primary-btn">   Editar       </a>
+	    <a href="/project/delete_project/{{p.id}}/" class="submit btn primary-btn">   Eliminar     </a>
+	    <a href="/social/request_join_project/{{p.id}}/" class="submit btn primary-btn">   Invitar usuario     </a>
+	    </br></br>
+	{% endfor %}
+	
+{% else %}
+	Usted no es lider de ningun proyecto.
+{% endif %}
+
+</br><hr/>
+
+<h1 style="font-size:20px;"> Proyectos en los que participo </h1>
+</br>
+{% if participant_projects %}
+	
+	{% for p in participant_projects %}
+
+	    	<a href="/project/read_project/{{p.id}}/" class="submit btn primary-btn"> {{ p.name }} </a>
+	    	<a href="/activity/manage_activity/{{p.id}}/" class="submit btn primary-btn"> Gestionar </a>
+			<form action="/project/quit_project/" method="POST">    	
+			{% csrf_token %}
+				<button type="submit" name="project_id" value="{{p.id}}" class="submit btn primary-btn"> Abandonar </button>
+			</form>			
+			</br></br>
+	{% endfor %}
+
+
+{% else %}
+	Usted no participa en ningun proyecto.
+{% endif %}
+</br>
+
+</div>
+
+{% endblock %}	

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if act.techniques %}
+    <ul>
+    <h1> Técnicas Disponibles para esta actividad </h1>
+	<br>
+    {% for technique in act.techniques %}
+	<li>
+		<a href="/activity/read_technique/{{ technique.id }}/"> {{ technique.name }} </a></td>
+        <a href="/activity/indextec/update/{{ technique.id }}/"> Editar </a></td>
+		<br>
+	</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <h1> Ninguna Técnica Disponible </h1>
+	<br>
+{% endif %}
+<br>
+<a href='/activity/indextec/add'>Agregar Técnica</a>
+{% endblock %}

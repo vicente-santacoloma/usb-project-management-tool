@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<script type="text/javascript"> 
+  $(function(){
+    $("#id_date_start").datepicker();
+    $("#id_date_end").datepicker();
+  });
+</script>
+
+
+<form action="/project/update_project/{{ project_id }}/{% if next %}?next={{ next }}{% endif %}" method="POST" >
+	{% csrf_token %}
+	<table>
+	{{ form.as_table }}
+	</table>
+    <br/> 
+    <br/>
+	<input type="submit" value="Guardar" />
+</form>
+
+{% endblock %}

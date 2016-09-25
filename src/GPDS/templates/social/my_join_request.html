@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class=box>
+
+<h1> Solicitudes Pendientes </h1>
+</br>
+
+{% if message %}
+
+	{{ message }}
+
+{% else %}
+
+	{% if join_request %}
+	
+		{% for r in join_request %}
+		
+			<form action="." method="POST" >
+			
+				{% csrf_token %}
+			
+				<input type="hidden" name="project" value="{{ r.project.id }}" />
+				El usuario 
+				<a href="/users/read_user/{{ r.from_user.id }}/" > {{ r.from_user.username }} </a> 
+				te ha invitado a unirte al proyecto 
+				<a href="/project/read_project/{{ r.project.id }}/" > {{ r.project.name }} </a>
+				<button type="submit" name="button" value="accept"> Aceptar  </button>
+				<button type="submit" name="button" value="reject"> Rechazar </button>
+				</br>
+			</form>
+				
+		{% endfor %}	
+	
+	{% else %}
+		Usted no tiene solicitudes pendientes
+	{% endif %}
+
+{% endif %}
+
+</div>
+
+{% endblock %}

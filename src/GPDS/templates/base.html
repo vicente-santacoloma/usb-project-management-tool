@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% load static from staticfiles %}
+    <title>Gestion de Proyectos de Desarrollo de Software</title>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/reset.css" %}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/grid_12.css" %}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/slider.css" %}">
+    <script type="text/javascript" src="{% static "js/jquery-1.3.2.min.js" %}"></script>
+	<script type="text/javascript" src="{% static "js/tabs.js" %}"></script>
+    <link href='http://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+         <!--Para calendario jquery-ui.css -->
+ 	<link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/redmond/jquery-ui.css" rel="Stylesheet" />
+    <!--Para calendario jquery-min.ui.1.4.3.js  -->
+    <script language="javascript" type="text/javascript" src="{% static "js/jquery-min.ui.1.4.3.js" %}"></script> 
+    <script src="{% static "js/jquery-1.7.min.js" %}"></script>
+    <script src="{% static "js/jquery.easing.1.3.js" %}"></script>
+    <script src="{% static "js/tms-0.4.x.js" %}"></script>
+        <!--Para calendario jquery-min.ui.1.8.6.js  -->
+    <script language="javascript" type="text/javascript" src="{% static "js/jquery-min.ui.1.8.6.js" %}"></script>
+    
+    <script>
+    
+		$(document).ready(function(){				   	
+			$('.slider')._TMS({
+				show:0,
+				pauseOnHover:true,
+				prevBu:false,
+				nextBu:false,
+				playBu:false,
+				duration:1000,
+				preset:'fade',
+				pagination:true,
+				pagNums:false,
+				slideshow:7000,
+				numStatus:true,
+				banners:'fromRight',
+				waitBannerAnimation:false,
+				progressBar:false
+			})		
+		});
+	</script>
+
+</head>
+
+<body>
+{% load static from staticfiles %}
+<div class="layer">
+
+	<div class="black">
+		<header>
+            <nav class="box-shadow">
+                <div>
+                    <ul class="menu">
+                        <li><a href="/">Inicio</a>       </li>
+                        <li><a href="/methodology/manage_methodology">Metodologías</a></li>
+                        <li><a href="/project/manage_project">Proyectos</a> </li>
+                        <li><a href="/activity/manage_activity_user">Actividades</a></li>       
+                        <!-- <li><a href="contacts.html">Contactos</a></li> -->
+                        {% if user.is_staff %}
+                        	<li><a href="/admin/">Admin Site</a></li>
+                        {% endif %}
+                    </ul>
+                    <div class="signin">
+	                    {% if not user.is_authenticated  %}
+	                    		¿Tienes una cuenta?   
+	                    		<a href="/users/sign_up">Registrate</a>  
+	                    		o  
+	                    		<a href="/users/login/">Login</a>
+	                	{% else %}
+	                			Hola, <span class="white"> {{ user.username }}! </span> &nbsp;|&nbsp; 
+	                			<a href="/users/update_user/">Mi cuenta</a>  &nbsp;|&nbsp;
+	                			<a href="/social/my_join_request/">Mis solicitudes</a>  &nbsp;|&nbsp;
+	                			<a href="/users/password_change/">Cambiar contrasena</a>  &nbsp;|&nbsp;
+	                			<a href="/users/logout/">Logout</a>
+	                	{% endif %}
+                	</div>
+
+					<div class="form-search">
+	    				<form id="form-search" action="/users/find_anywhere/" method="post">
+	    					{% csrf_token %}
+	      					<input type="text" value="Type here..." onBlur="if(this.value=='') this.value='Type here...'" onFocus="if(this.value =='Type here...' ) this.value=''"  name="find" id="find" />
+	      					<a href="#" type="submit" onClick="document.getElementById('form-search').submit()" class="search_button"></a>
+        				</form>
+                </div>
+                <div class="clear"></div>
+                <div class="navig">
+                    <div class="logo">
+                        <!-- <img src="images/logo.png" alt="img"> -->
+                        <p onclick="window.location='/'">Gestion de Proyectos <span class="green"> de Desarrollo de Software</span></p>
+                     </div>
+                    <div class="search">
+                        <div class="supp"><a target="_blank" href="/tutorial">Tutorial</a>&nbsp;|&nbsp;<a target="_blank" href="/support">Soporte</a>&nbsp;|&nbsp;<a target="_blank" href="/help">Ayuda</a></div> 
+                        <div class="clear"></div>
+                    </div>
+                </div> 
+            </nav>
+            <!-- Imagenes que rotan -->
+            <!-- Se puede colocar el contenido principal en esta parte -->
+            	</br></br></br></br>
+				{% if request.get_full_path == "/" %}
+            	
+	            	<div class="slider">
+		                <ul class="items">
+		                	<li><img src="{% static "images/projects/segovia_aqueduct_1.jpg" %}" alt="" /><div class="banner">Crea, organiza y gestiona tus proyectos&nbsp;</div></li>
+		                    <li><img src="{% static "images/projects/segovia_aqueduct_2.jpg" %}" alt="" /><div class="banner">Pa' lante comandante&nbsp;</div></li>
+		                    <li><img src="{% static "images/projects/segovia_aqueduct_3.jpg" %}" alt="" /><div class="banner">Para vivir viviendo&nbsp;</div></li>
+		                    <li><img src="{% static "images/projects/software_design_1.jpg" %}" alt="" /><div class="banner">Elige una metodologia o crea una propia&nbsp;</div></li>
+		                    <li><img src="{% static "images/projects/software_team.jpg" %}" alt="" /><div class="banner">Desarrolla tus actividades&nbsp;</div></li>
+		                </ul>
+		            </div>
+		        {% endif %}
+	            </br></br>
+  	                 
+		</header>
+	</div>
+	<div class="grey">
+		<div class="center">
+
+			{% block content %}
+			
+			{% endblock %}
+
+            <div class="linrr"></div>
+			<div class="linr"><br><img src="{% static "images/09.png" %}" alt="img"></div>
+            <div class="clear"></div>
+			<div class="opp">
+                <div class="textt"><p class="text7">Tutorial</p><p class="text8">Subcomentarios</p></div>
+                <div class="button"><a target="_blank" href="/tutorial"><img src="{% static "images/11.png" %}" alt="img"></a></div>
+            </div>
+			<div class="linr"><br><img src="{% static "images/09.png" %}" alt="img"></div>
+			<div class="maincontent">
+				<div class="it"><p class="text11"></div> 
+				<div class="blackfoot">
+					<div class="footer">
+						<div class="about"><p class="text13">acerca</p>
+							<ul class="foot">
+                                <li><a target="_blank" href="/version">Version</a></li>
+                                <li><a target="_blank" href="/authors">Autores</a> </li>
+                                <li><a target="_blank" href="/license">Licencia</a>    </li>
+							</ul></div>
+							<div class="join"><p class="text13">unete</p>
+								<ul class="foot">
+                                    <li><a href="/users/sign_up">Registrate</a></li>
+                                    <li><a target="_blank" href="">Enlace</a></li>
+                                    <li><a target="_blank" href="">Enlace</a></li>
+								</ul>
+                            </div>
+							<div class="advice"><p class="text13">gestion</p>
+								<ul class="foot">
+                                    <li><a href="/methodology/">Metodologias</a></li>
+                                    <li><a href="/project/">Proyectos</a></li>
+                                    <li><a href="/activity/">Actividades</a></li>
+                                </ul>
+                            </div>
+							<div class="downloads"><p class="text13">servicio</p><ul class="foot">
+                                <li><a target="_blank" href="/tutorial">Tutorial</a></li>
+                                <li><a target="_blank" href="/support">Soporte</a></li>
+                                <li><a target="_blank" href="/help">Ayuda</a></li>
+                                </ul>
+                            </div>
+							<div class="gro">
+								<!-- <p><a target="_blank" href="https://www.djangoproject.com/"><img src="{% static "images/django/django_powered.jpg" %}"  alt="img"></a> -->
+								<p class="soc">
+                                	<a target="_blank" href="https://facebook.com"><img src="{% static "images/22.png" %}"  alt="img"></a>
+                                    <a target="_blank" href="https://twitter.com/"><img src="{% static "images/23.png" %}"  alt="img"></a>
+                                    <a target="_blank" href="https://plus.google.com/"><img src="{% static "images/24.png" %}"  alt="img"></a>
+                                    </br></br></br>
+                                    <a target="_blank" href="https://www.djangoproject.com/"><img src="{% static "images/django/django_powered.jpg" %}"  alt="img"></a>
+                                </p>
+                                <div class="clear"></div>
+								<div class="vlinks">
+                                	 <a target="_blank" href="http://www.webdesign.org">Web design</a> by <a title="Free Templates Online" target="_blank" href="http://www.freetemplatesonline.com">Free Templates Online </a>
+                                </div>
+                                <!-- <p><a target="_blank" href="https://www.djangoproject.com/"><img src="{% static "images/django/django_powered.jpg" %}"  alt="img"></a></p> -->
+
+							</div>
+                    	</div>
+                	</div>    
+            	</div>       
+        	</div> 
+        	</br></br></br></br>                  
+		</div>
+	</div>
+
+</div>
+
+</body>
+
+</html>

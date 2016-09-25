@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block content %}
+
+<div class="manage-box">
+
+<h1 style="font-size:20px;"> Mis actividades </h1>
+</br>
+
+{% if activities %}
+
+	{% for a in activities %}
+		<a href="/activity/read_activity/{{ a.id }}/" class="submit btn primary-btn-activity">  {{ a.name }} </a>
+		<a href="/activity/read_artifact/{{ a.id }}/" class="submit btn primary-btn-activity">  Gestionar    </a>
+		{% if project.leader_id == request.user.id %}
+			<a href="/activity/update_activity/{{ a.id }}/" class="submit btn primary-btn-activity"> Editar  </a>
+		    <a href="/activity/read_artifact/{{ a.id }}/" class="submit btn primary-btn-activity">   Eliminar</a>
+		{% endif %}
+	    </br></br>
+	{% endfor %}
+	
+{% else %}
+	No hay actividades disponibles para este proyecto.
+{% endif %}
+
+</br>
+	
+</div>
+
+{% endblock %}

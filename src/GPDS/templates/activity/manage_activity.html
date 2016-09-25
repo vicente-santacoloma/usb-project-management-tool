@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block content %}
+
+<div class="manage-box">
+
+{% if message %}
+	{{ message }}
+{% else %}
+    <h1 style="font-size:20px;"> Selecciona una opcion </h1>
+	</br>
+	{% if project.leader_id == request.user.id %}
+		
+		<a href="/activity/create_activity/{{project.id}}/" class="submit btn primary-btn-activity">Crear actividad</a>
+		</br>
+        </br>
+        
+	{% endif %}
+    <a href="/activity/graph_activities/{{project.id}}/" class="submit btn primary-btn-activity">Ir a grafo de actividades</a>
+	</br>
+	</br><hr/>
+    
+	<h1 style="font-size:20px;"> Actividades del proyecto {{ project.name }} </h1>
+	</br>
+	
+	{% if activities %}
+		{% for a in activities %}
+                     
+			<a href="/activity/read_activity/{{ a.id }}/" class="submit btn primary-btn-activity">  {{ a.name }} </a>
+			<a href="/activity/read_artifact/{{ a.id }}/" class="submit btn primary-btn-activity">  Gestionar    </a>
+			{% if project.leader_id == request.user.id %}
+			    <a href="/activity/update_activity/{{ a.id }}/" class="submit btn primary-btn-activity"> Editar </a>
+			    <a href="/activity/read_artifact/{{ a.id }}/" class="submit btn primary-btn-activity">   Eliminar </a>
+			{% endif %}
+                     </br></br>
+		{% endfor %}
+		
+	{% else %}
+		No hay actividades disponibles para este proyecto.
+	{% endif %}
+	
+	</br>
+	
+{% endif %}
+
+</div>
+
+{% endblock %}	

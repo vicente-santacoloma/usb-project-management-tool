@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="manage-box">
+
+<h1 style="font-size:20px;"> Proyecto que lidera </h1>
+</br>
+
+{% if leader_projects %}
+
+	{% for p in leader_projects %}
+		<a href="/activity/manage_activity/{{p.id}}/" class="submit btn primary-btn">  {{ p.name }} </a>
+		<a href="/project/read_project/{{p.id}}/" class="submit btn primary-btn">   Ver         </a>
+		<a href="/project/update_project/{{p.id}}/" class="submit btn primary-btn"> Editar      </a>
+	    <a href="/project/delete_project/{{p.id}}/" class="submit btn primary-btn"> Eliminar    </a>
+	    </br>
+	{% endfor %}
+	
+{% else %}
+	Usted no es lider de ningun proyecto que coincida con la busqueda.
+{% endif %}
+
+</br><hr/>
+
+<h1 style="font-size:20px;"> Proyecto en el que participa </h1>
+</br>
+{% if participant_projects %}
+	
+	{% for p in participant_projects %}
+
+	    	<a href="/activity/manage_activity/{{p.id}}/" class="submit btn primary-btn">  {{ p.name }} </a>
+	    	<a href="/project/read_project/{{p.id}}/" class="submit btn primary-btn">   Ver         </a>
+	    	<a href="/project/delete_project/{{p.id}}/" class="submit btn primary-btn"> Abandonar   </a>
+			</br>
+	{% endfor %}
+
+
+{% else %}
+	Usted no es participante de ningun proyecto que coincida con la busqueda.
+{% endif %}
+</br>
+
+</div>
+<br>
+<div class="manage-box">
+{% if softwareProcesses%}
+    <ul>
+    <h1 style="font-size:20px;"> Proceso de Software </h1>
+    {% for software_process in softwareProcesses %}
+        <li><a class="submit btn primary-btn" href="/methodology/read_softwareprocess/{{ software_process.id }}/"> {{ software_process.name }} </a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <h1 style="font-size:20px;"> Ningún Proceso de Software coincide con la busqueda </h1>
+{% endif %}
+</div>
+<br>
+<div class="manage-box">
+{% if methodologies %}
+{% csrf_token %}
+    <ul>
+    <h1 style="font-size:20px;"> Metodología </h1>
+{% for methodology in methodologies %}    
+    <li>              
+		<td><a class="submit btn primary-btn" href="/methodology/{{ methodology.id }}/">{{ methodology }}</a></td>	 
+	</li>
+{% endfor %}
+	</ul>    
+{% else %}
+<h1 style="font-size:20px;"> Ninguna Metodología coincide con la busqueda </h1>
+            
+{% endif %}
+</div>
+<br>
+<div class="manage-box">
+{% if activities %}
+	<ul>
+	<h1 style="font-size:20px;"> Actividad </h1>
+	{% for a in activities %}
+		<a class="submit btn primary-btn" href="/activity/read_activity/{{ a.id }}/" class="submit btn primary-btn-activity">  {{ a.name }}  </a>
+		<a class="submit btn primary-btn" href="/activity/read_artifact/{{ a.id }}/" class="submit btn primary-btn-activity">  Artefactos </a>
+		{% if project.leader_id == request.user.id %}
+			<a class="submit btn primary-btn" href="/activity/update_activity/{{ a.id }}/" class="submit btn primary-btn-activity"> Editar      </a>
+		    <a class="submit btn primary-btn" href="/activity/read_artifact/{{ a.id }}/" class="submit btn primary-btn-activity">   Eliminar    </a>
+		{% endif %}
+	    </br>
+	{% endfor %}
+		</ul>
+{% else %}
+	<h1 style="font-size:20px;"> Ninguna Actividad coincide con la busqueda </h1>
+{% endif %}
+</div>
+<br>
+<div class="manage-box">
+{% if techniques %}
+    <ul>
+    <h1 style="font-size:20px;"> Técnica </h1>
+    {% for technique in techniques %}
+	
+		<a class="submit btn primary-btn" href="/activity/read_technique/{{ technique.id }}/"> {{ technique.name }} </a></td>
+		<br>
+	
+    {% endfor %}
+    </ul>
+{% else %}
+    <h1 style="font-size:20px;"> Ninguna Técnica Disponible </h1>
+	<br>
+{% endif %}
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script type="text/javascript"> 
+  $(function(){
+    $("#id_date_start").datepicker();
+    $("#id_date_end").datepicker();
+  });
+</script>
+
+<div class="read-box" style="background-color:#000000;">
+
+<h1 style="font-size:20px;">{{ project.name }}</h1>
+<ul>
+    Descripción: {{ project.description }}<br>
+    Fecha de Inicio: {{ project.date_start }}<br>
+    Fecha de Culminación: {{ project.date_end }}<br>
+    Costo del Proyecto: {{ project.cost }}<br>
+    Area del Proyecto: {{ project.area }}<br>
+    Metodología del Proyecto: {{ project.methodology.name }}<br>
+    Lider del Proyecto: {{ project.leader }}<br></br>
+    <a href="/project/manage_project/"> Regresar </a>
+</ul>
+
+</div>
+
+{% endblock %}

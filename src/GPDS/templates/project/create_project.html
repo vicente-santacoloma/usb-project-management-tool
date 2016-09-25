@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script type="text/javascript"> 
+  $(function(){
+    $("#id_date_start").datepicker();
+    $("#id_date_end").datepicker();
+  });
+</script>
+
+{% if user.is_authenticated %}
+        <h1>Nuevo Proyecto</h1>
+
+        <form action="" method="POST" >
+	        {% csrf_token %}
+	        <table>
+	        {{ form.as_table }}
+	        </table>
+	        <button type="submit" class="submit btn primary-btn"> Crear </button>
+        </form> 
+{% else %}
+        <p>Primero debe iniciar sesión</p>
+{% endif %}
+
+{% endblock %}
+         

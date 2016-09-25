@@ -1,0 +1,234 @@
+
+{% load static from staticfiles %}
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      canvas {
+        border: 1px solid #9C9898;
+      }
+      #tango {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 10px;
+      }
+      #container {
+        background-image: url("{% static "images/backgroundGraph.jpg" %}");
+        display: inline-block;
+        overflow: hidden;
+        height: 365px;
+        width: 580px;
+      }
+    </style>
+    <script src="{% static "js/lib/kinetic-v3.10.0.min.js" %}"></script>
+    <script src="{% static "js/class/Point.js" %}"></script>
+    <script src="{% static "js/class/Activity.js" %}"></script>
+    <script src="{% static "js/class/Connector.js" %}"></script>
+    <script src="{% static "js/class/Server.js" %}"></script>
+    <script>
+    var serverActivities = new Array();
+    var serverConnections = new Array();
+    var canvasHeight = 480;
+    var canvasWidth = 640;
+    var graficVertCenter = 100;
+    var graficHorCenter = 50;
+    var layers = new Array();
+    var connectors = [];
+    var selected = null;
+    var scale = 1.0;
+    var scaleMultiplier = 0.8;
+    var sepparationY = 100;
+    var sepparationX = 200;
+                
+    function updateConnectors(layer) {
+        for (i in connectors) {
+            var c = connectors[i];
+            var p1 = c.start.getFacing(c.end);
+            var p2 = c.end.getFacing(c.start);
+            c.line.setPoints([
+                p1.x, p1.y,
+                p2.x, p2.y
+            ]);
+            var a = AngleBetweenPoints(p2,p1);
+            var p4 = ProjectPoint(p2, a + 0.5235, 10);
+            var p3 = ProjectPoint(p2, a - 0.5235, 10);
+            c.punta.setPoints([
+                p2.x, p2.y,
+                p3.x, p3.y,
+                p4.x, p4.y,
+                p2.x, p2.y
+            ]);
+        }
+    }
+    
+    function ProcessServerData() {
+        var act = new Array();
+        {% if activities %}
+            {% for a in activities %}
+                act[{{ a.id }}] = new ServerActivity({{ a.id}},"{{ a.name }}");
+            {% endfor %}
+        {% endif %}
+        {% if lonelies %}
+            {% for l in lonelies %}
+                act[{{ l.id }}].setAtop();
+            {% endfor %}
+        {% endif %}
+        {% if connectors %}
+            {% for c in connectors %}
+                serverConnections.push(new ServerConnection(act[{{ c.act1.id }}] ,  act[{{ c.act2.id }}] ));
+            {% endfor %}
+        {% endif %}
+        var ilevel = 1;
+        for ( a in act ) {
+            if (act[a].level > ilevel) {
+                ilevel = act[a].level;
+            }
+        }
+        var i = 0;
+        while (i != ilevel) {
+            i++;
+            serverActivities[i] = new Array();
+        }
+        for (i in act) {
+            var a = act[i];
+            serverActivities[a.level][a.id] = a;
+        }
+    }
+    
+    function ConfigActivity(layer,act) {
+        var actShape = act.shape;
+        
+        actShape.on("mouseover", function() {
+            document.body.style.cursor = "pointer";
+            this.box.setFill("#20FF20");
+            layer.draw();
+        });
+        actShape.on("mouseout", function() {
+            this.box.setFill("#88FF88");
+            document.body.style.cursor = "default";
+            layer.draw();
+        });
+
+        layer.add(actShape);
+    }
+    
+    function ConfigConnector(layer,con) {
+        layer.add(con.line);
+        layer.add(con.punta);
+        connectors.push(con);
+    }
+      
+    function addActivities(layer, stage) {
+        ProcessServerData();
+        var levels = serverActivities.length;
+        var startX = graficHorCenter;
+        for (i in serverActivities) {
+            var actLevel = serverActivities[i];
+            var startY = graficVertCenter;
+            for (j in actLevel) {
+                var actServer = actLevel[j];
+                var act = new Activity( startX, startY, actServer.name,actServer.id);
+                actServer.actClient = act;
+                ConfigActivity(layer,act);
+                startY = startY + sepparationY;
+            }
+            startX = startX + sepparationX;
+        }
+        for (i in serverConnections) {
+            var connec = serverConnections[i];
+            var start = connec.start.actClient;
+            var end = connec.end.actClient;
+            var con = new Connector(start, end);
+            ConfigConnector(layer,con);
+        }
+        for (i in serverActivities) {
+            var actLevel = serverActivities[i];
+            for (j in actLevel) {
+                var act = actLevel[j].actClient;
+                act.shape.moveToTop();
+            }
+        }
+    }
+
+    window.onload = function() {
+        var test = new Array();
+        var stage = new Kinetic.Stage({
+            container: 'container',
+            width: canvasWidth,
+            height: canvasHeight
+        });
+        var layer = new Kinetic.Layer();
+        layer.beforeDraw(function() {
+            updateConnectors(layer);
+        });
+        var controllers = new Kinetic.Layer();
+        addActivities(layer, stage);
+         // var imageObj = new Image();
+            // imageObj.onload = function() {
+                // var image = new Kinetic.Image({
+                    // x: stage.getWidth() - 96,
+                    // y: 0,
+                    // image: imageObj,
+                    // width: 32,
+                    // height: 32
+                // });
+                // controllers.add(image);
+            // };
+            // imageObj.src = "plus2.png";
+        
+
+        // imageObj2 = new Image();
+        // imageObj2.src = "minus2.png";
+        // imageObj2.onload = function() {
+            // var image = new Kinetic.Image({
+                // x: stage.getWidth() - 96,
+                // y: 32,
+                // image: imageObj2,
+                // width: 32,
+                // height: 32
+            // });
+            // controllers.add(image);
+        // };
+        
+        stage.add(controllers);
+        stage.add(layer);
+        
+        // add button event listeners
+        document.getElementById("plus").addEventListener("click", function(){
+            scale /= scaleMultiplier;
+            layer.setScale(scale);
+            layer.draw();
+            controllers.draw();
+        }, false);
+        
+        document.getElementById("minus").addEventListener("click", function(){
+            scale *= scaleMultiplier;
+            layer.setScale(scale);
+            layer.draw();
+            controllers.draw();
+        }, false);
+    };
+
+    </script>
+    
+{% block content %}
+<div class="manage-box">
+{% if message %}
+	{{ message }}
+{% else %}
+	<h1 style="font-size:20px;"> Grafo de actividades del proyecto: {{ project.name }} </h1>
+	</br>
+	<div id="container">
+        <div id="buttonWrapper"></div>
+        <input type="button" id="plus" value="+">   
+        <input type="button" id="minus" value="-">
+    </div>
+	</br>
+    <a href="/activity/manage_activity/{{project.id}}/" class="submit btn primary-btn-activity">Regresar a gestionar actividades</a>
+	</br>
+{% endif %}
+</div>
+
+{% endblock %}	

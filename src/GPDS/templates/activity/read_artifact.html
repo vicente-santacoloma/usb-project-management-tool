@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+	<h1>Artefactos</h1>
+		<table style="padding: 2px">
+		{% for i in artifacts%}
+			<tr>
+				<td><a href="/activity/open_artifact/{{i.id}}">{{ i }}</a></td>
+				<td>{{ i.description }}</td>
+				<td>{{ i.activity }}</td>
+				<td>{{ i.technique }}</td>
+				<td><a href="/activity/update_artifact/{{i.id}}">Modificar</a></td>
+			</tr>
+		{% endfor %}	
+		</table>
+	<h1> Nuevos Artefacto</h1>	
+	<a href="/activity/create_artifact" class="submit btn primary-btn"> Crear Artefacto </a>
+{% endblock %}
+

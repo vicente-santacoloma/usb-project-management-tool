@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="read-box" style="background-color:#000000;">
+
+<h1 style="font-size:20px;">{{ software_process_name }}</h1>
+<br>
+<ul>
+    Descripción: {{ software_process.description }}   
+</ul>
+
+</div>
+
+<br>
+<a style="font-size:15px;" href="/methodology/manage_softwareprocess/"> Regresar </a>
+
+{% endblock %}

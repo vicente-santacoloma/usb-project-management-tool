@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="read-box" style="background-color:#000000;">
+
+<h1 style="font-size:20px;">{{ activity.name }}</h1><br>
+<ul>
+    <li> Descripción: {{ activity.description }} </li><br>
+	<li> Inicio: {{activity.date_start.day}}-{{activity.date_start.month}}-{{activity.date_start.year}} a las {{activity.date_start.hour}}:{{activity.date_start.minute}}</li><br>
+	<li> Progreso actual: {{ activity.progress }}% </li><br>
+	<li> Fin: {{activity.date_end.day}}-{{activity.date_end.month}}-{{activity.date_end.year}} a las {{activity.date_end.hour}}:{{activity.date_end.minute}} </li><br>
+	{% if roles %}
+		<li> Roles implicados: </li>
+		{% for role in roles %}
+			<li><a href="/methodology/read_role/{{ role.id }}/">	{{role.name}}</a></li>
+		{% endfor %}
+	{% else %}
+		<li> No se encuentran roles asociados. </li><br>
+	{% endif %}
+	<br>
+	{% if users %}
+		<li> Participantes de la actividad:</li>
+		{% for user in users %}
+			<li><a href="/users/read_user/{{ user.id }}/">	{{user}}</a>
+			<a href="/activity/create_user_role/{{ user.id }}">Asignar rol</a></li>
+		{% endfor %}
+	{% else %}
+		<li> No está a cargo de nadie. </li><br>
+	{% endif %}
+	<br>
+	{% if subacts %}
+		<li> Subactividades que la componen: </li>
+		{% for sub in subacts %}
+			<li><a href="/activity/read_activity/{{ sub.id }}/">	{{sub.name}}</a></li>
+		{% endfor %}
+	{% else %}
+		<li> No está compuesta por subactividades. </li>
+	{% endif %}
+	<br>
+	{% if required %}
+		<li> Actividades precedentes: </li>
+		{% for req in required %}
+			<li><a href="/activity/read_activity/{{ req.id }}/">	{{req.name}}</a></li>
+		{% endfor %}
+	{% else %}
+		<li> No posee actividades precedentes </li>
+	{% endif %}
+	<br>
+	{% if successor %}
+		<li> Actividades sucesoras: </li>
+		{% for suc in successor %}
+			<li><a href="/activity/read_activity/{{ suc.id }}/">	{{suc.name}}</a></li>
+		{% endfor %}
+	{% else %}
+		<li> No posee actividades sucesoras </li>
+	{% endif %}
+	<br>
+	{% if techniques %}
+		<li> Técnicas asociadas: </li>
+		{% for tech in techniques %}
+			<li><a href="/activity/read_technique/{{ tech.id }}/">	{{tech.name}}</a></li>
+		{% endfor %}
+	{% else %}
+		<li> No posee técnicas asociadas </li>
+	{% endif %}
+	<br>
+</ul>
+
+<br>
+<a href="/activity/manage_activity/{{ activity.project.id }}"> Volver a actividades de este proyecto</a>
+<br><br>
+<a href="/activity/manage_activity_user/"> Volver a mis actividades </a>
+
+</div>
+
+{% endblock %}

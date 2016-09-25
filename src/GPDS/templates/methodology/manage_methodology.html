@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+	function delete_methodology(page) {
+		var options="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=yes, width=508, height=365, top=85, left=140";
+		var agree=confirm('¿Esta seguro que desea eliminar la Metodología?');
+			if (agree){
+				alert("Se ha deshabilitado la Metodología");
+				window.location.assign(page)
+     			}
+		}
+</script>
+
+<div class ="manage-box" >
+
+<h1 style="font-size:20px;"> Selecciona una opcion </h1>
+</br>
+<a href="/methodology/create_methodology/" class="submit btn primary-btn-methodology">Crear nueva metodologia</a>
+<a href="/methodology/manage_rol/" class="submit btn primary-btn-methodology">Consultar rol</a>
+<a href="/methodology/manage_softwareprocess/" class="submit btn primary-btn-methodology">Gestionar procesos de software</a>
+</br></br><hr/>
+
+<h1 style="font-size:20px;"> Mis metodologias </h1>
+</br>
+
+{% if owner_methodologies %}
+	{% for m in owner_methodologies %}
+		<td><a href="/methodology/read_methodology/{{ m.id }}/" class="submit btn primary-btn-methodology">{{ m.name }}</a></td>
+        <td><a href="/methodology/update_methodology/{{ m.id }}/" class="submit btn primary-btn-methodology">Editar</a></td>
+		<td><a href="javascript:delete_methodology('/methodology/delete_methodology/{{ m.id }}/')" class="submit btn primary-btn-methodology">Eliminar</a></td>
+		</br></br>
+	{% endfor %}
+{% else %}
+	Usted no ha creado ninguna metodologia.
+{% endif %}
+
+</br><hr/>
+
+<h1 style="font-size:20px;"> Metodologias publicas </h1>
+</br>
+{% if public_methodologies %}
+	
+    {% for m in public_methodologies %}
+		<td><a href="/methodology/read_methodology/{{ m.id }}/" class="submit btn primary-btn-methodology">{{ m.name }}</a></td>
+		</br>
+	{% endfor %}
+{% else %}
+	No hay metodologias publicas disponibles.
+{% endif %}
+</br>
+
+</div>
+
+{% endblock %}

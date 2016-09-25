@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<h1>Actualizar Artefacto</h1>
+		<form method='POST' action='update_artifact' >
+			{% csrf_token %}
+			Nombre:<input type="text" name="name" value="{{art.name}}">
+			<br>
+			Descripci&oacute;n: {{form.description}}
+			<br>
+			Contenido:{{art.content.name}}
+			<br>
+			Actividad:<select name= 'activity' selected='{{art.activity}}'>
+				{%for i in  act %}
+					<option value= '{{i.name}}'>{{i}}</option>
+				{%endfor%}
+				</select>
+			<br>	
+			T&eacute;cnica:<select name= 'technique' selected={{art.technique}}>
+				{%for i in  tech %}
+					<option value= '{{i.name}}'>{{i}}</option>
+				{%endfor%}
+				</select> 
+				<br>
+		 		<input type='submit' value='Actualizar'>		
+		</form >
+{% endblock %}

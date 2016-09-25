@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class=box>
+
+<h1 style="font-size:20px;">{{ "Mi cuenta" }}</h1>
+</br>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/users/update_user/{% if next %}?next={{ next }}{% endif %}" method="POST" >
+	{% csrf_token %}
+	<table>
+	{{ form.as_table }}
+	</table>
+	</br>
+	<button type="submit" class="submit btn primary-btn">Actualizar</button>
+</form>
+</br>
+</div>
+
+{% endblock %}
