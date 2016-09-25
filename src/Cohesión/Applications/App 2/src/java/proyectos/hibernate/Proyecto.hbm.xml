@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="proyectos.hibernate.Proyecto" table="PROYECTO">
+      <!-- 0 -->
+      <id name="idProyecto" column="idProyecto">
+        <generator class="native"/>
+      </id>
+
+      <!-- 1 -->
+      <property name="nombre" column="nombre" type="string"/>
+      <!-- 2 -->
+      <property name="tiempo_Estimado" column="tiempo_Estimado" type="integer"/>
+      <!-- 3 -->
+      <property name="area" column="area" type="string"/>
+      <!-- 4 -->
+      <property name="descripcion" column="descripcion" type="string"/>
+      <!-- 5 -->
+      <property name="fecha_de_Inicio" column="fecha_de_Inicio" type="date"/>
+      <!-- 6 -->
+      <property name="fecha_de_Fin" column="fecha_de_Fin" type="date"/>
+      <!-- 7 -->
+      <property name="costo" column="costo" type="integer"/>
+      <!-- 8 -->
+      <property name="encargado" column="encargado" type="string"/>
+      <!-- 9 -->
+      <many-to-one name="metodologia" column="metodologia" not-null="true" />      <!-- 10 -->
+      <set name="actividades" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="proyecto"/>
+        <one-to-many class="proyectos.hibernate.Actividad"/>
+      </set>
+
+    </class>
+</hibernate-mapping>

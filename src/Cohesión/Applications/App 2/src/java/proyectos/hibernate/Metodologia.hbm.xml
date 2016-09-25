@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="proyectos.hibernate.Metodologia" table="METODOLOGIA">
+      <!-- 0 -->
+      <id name="idMetodologia" column="idMetodologia">
+        <generator class="native"/>
+      </id>
+
+      <!-- 1 -->
+      <property name="nombre" column="nombre" type="string" not-null="true" unique="true"/>
+      <!-- 2 -->
+      <property name="descripcion" column="descripcion" type="text"/>
+      <!-- 3 -->
+      <property name="clasificacion" column="clasificacion" type="string"/>
+      <!-- 4 -->
+      <property name="esPrivada" column="esPrivada" type="boolean"/>
+      <!-- 5 -->
+      <set name="proyectos" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="metodologia"/>
+        <one-to-many class="proyectos.hibernate.Proyecto"/>
+      </set>
+      <!-- 6 -->
+      <set name="roles" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="metodologia"/>
+        <one-to-many class="proyectos.hibernate.Rol"/>
+      </set>
+      <!-- 7 -->
+      <many-to-one name="lider" column="lider" />      <!-- 8 -->
+      <many-to-one name="proceso" column="proceso" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+Modulo Activity
+
+Metodos:
+
+- indexact
+  No es listar todas las actividades que hay en el sistema. Es listar las actividades pertenecientes al proyecto
+  en el cual estamos y que su atributo enabled sea True.
+
+- addtec
+  Este caso de uso no es crear un tecnica. Todas las tecnicas ya se dan por creadas en el sistema. Este caso de uso
+  es agregar una o mas tecnicas para la actividad que esto creando. Muy probablemente esto se pueda hacer desde el
+  caso de uso crear actividad al pasarle algun formulario adecuado. Revisar
+
+- updatetec
+  En este caso de uso al hacer "tect = Technique.objects.get(id=technique_id)" debera hacerse dentro del if que corresponde
+  a GET no afuera. Pues si se accede a este caso por POST aun se estarian pasando datos por GET lo cual no deberia hacerse.
+  Cuando se acceda a este caso por POST se deberia pasar el technique_id como un atributo hidden en el form. Revisar.
+
+- open_artifact
+  Caso de uso incompleto.
+
+Modulo Methodology
+
+Metodos:
+
+- manage_methodology
+  No es listar todas las metodologias que hay en el sistema. Es listar las metodologias a las cual el usuario es lider y que 
+  ademas el atributo enabled sea True. Tambien se deberian poder listar las metodologias que estan precargadas por el sistema.
+  Tener en cuenta que de las metodologia precargadas por el sistemas solo se podran leer. Se pueden organizar los dos grupos de
+  metodologias en dos bloques para que esten bien diferenciadas en el .html
+
+- delete
+  Colocar el methodology_id como atributo oculto en lugar de pasarlo por GET. No es urgente
+
+- consultarRol
+  Caso de uso vacio. No hace nada solo renderiza a un .html
+
+- ListarRol
+  Caso de uso vacio. No hace nada solo renderiza a un .html
+
+Modulo Project
+
+Metodos:
+
+- manage
+  No es listar todos los proyectos del sistema. Es listar los proyectos a los cuales el usuario actual es participante y que ademas
+  su atributo enabled sea True. Este caso de uso ya lo habia implementado mas abajo bajo el nombre manage_project. Pues me habia tocado
+  hacer el caso "listar proyecto de un participante" lo cual aparentemente era lo mismo XD
+
+- delete
+  Colocar el project_id como atributo oculto en lugar de pasarlo por GET. No es urgente

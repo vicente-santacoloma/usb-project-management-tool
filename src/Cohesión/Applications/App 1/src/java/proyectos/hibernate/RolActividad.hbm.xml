@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="proyectos.hibernate.RolActividad" table="ROLACTIVIDAD">
+      <!-- 0 -->
+      <id name="idRolActividad" column="idRolActividad">
+        <generator class="native"/>
+      </id>
+
+      <!-- 1 -->
+      <many-to-one name="rol" column="rol" />      <!-- 2 -->
+      <many-to-one name="actividad" column="actividad" />
+    </class>
+</hibernate-mapping>

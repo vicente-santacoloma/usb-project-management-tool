@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="proyectos.hibernate.ProcesoSoftware" table="PROCESOSOFTWARE">
+      <!-- 0 -->
+      <id name="idProcesoSoftware" column="idProcesoSoftware">
+        <generator class="native"/>
+      </id>
+
+      <!-- 1 -->
+      <property name="nombre" column="nombre" type="string"/>
+      <!-- 2 -->
+      <property name="descripcion" column="descripcion" type="string"/>
+      <!-- 3 -->
+      <property name="tipo" column="tipo" type="integer"/>
+      <!-- 4 -->
+      <set name="actividades" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="procesoSoftware"/>
+        <one-to-many class="proyectos.hibernate.Actividad"/>
+      </set>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="proyectos.hibernate.ActividadParticipante" table="ACTIVIDADPARTICIPANTE">
+      <!-- 0 -->
+      <id name="idActividadParticipante" column="idActividadParticipante">
+        <generator class="native"/>
+      </id>
+
+      <!-- 1 -->
+      <many-to-one name="actividad" column="actividad" />      <!-- 2 -->
+      <many-to-one name="participante" column="participante" />      <!-- 3 -->
+      <property name="tiempoParticipacion" column="tiempoParticipacion" type="time" not-null="true"/>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="proyectos.hibernate.Actividad" table="ACTIVIDAD">
+      <!-- 0 -->
+      <id name="idActividad" column="idActividad">
+        <generator class="native"/>
+      </id>
+
+      <!-- 1 -->
+      <property name="descripcion" column="descripcion" type="string"/>
+      <!-- 2 -->
+      <property name="avance" column="avance" type="integer"/>
+      <!-- 3 -->
+      <property name="fechaInicio" column="fechaInicio" type="date"/>
+      <!-- 4 -->
+      <property name="fechaFin" column="fechaFin" type="date"/>
+      <!-- 5 -->
+      <set name="participantes" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="actividad"/>
+        <one-to-many class="proyectos.hibernate.ActividadParticipante"/>
+      </set>
+      <!-- 6 -->
+      <set name="roles" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="actividad"/>
+        <one-to-many class="proyectos.hibernate.RolActividad"/>
+      </set>
+      <!-- 7 -->
+      <set name="prerequisitos" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="prerequisito"/>
+        <one-to-many class="proyectos.hibernate.ActividadPre"/>
+      </set>
+      <!-- 8 -->
+      <many-to-one name="superactividad" column="superactividad" />      <!-- 9 -->
+      <many-to-one name="proyecto" column="proyecto" not-null="true" />      <!-- 10 -->
+      <set name="sucesores" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="superactividad"/>
+        <one-to-many class="proyectos.hibernate.Actividad"/>
+      </set>
+      <!-- 11 -->
+      <property name="tiempoEstimado" column="tiempoEstimado" type="time"/>
+
+    </class>
+</hibernate-mapping>

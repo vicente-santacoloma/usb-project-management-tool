@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="proyectos.hibernate.Participantes" table="PARTICIPANTES">
+      <!-- 0 -->
+      <id name="idParticipantes" column="idParticipantes">
+        <generator class="native"/>
+      </id>
+
+      <!-- 1 -->
+      <set name="roles" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="participante"/>
+        <one-to-many class="proyectos.hibernate.RolParticipante"/>
+      </set>
+      <!-- 2 -->
+      <property name="nombre" column="nombre" type="string" not-null="true"/>
+      <!-- 3 -->
+      <set name="proyectos" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="participante"/>
+        <one-to-many class="proyectos.hibernate.ProyectoParticipante"/>
+      </set>
+      <!-- 4 -->
+      <set name="actividades" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="participante"/>
+        <one-to-many class="proyectos.hibernate.ActividadParticipante"/>
+      </set>
+      <!-- 5 -->
+      <property name="usuario" column="usuario" type="string" not-null="true"/>
+      <!-- 6 -->
+      <property name="clave" column="clave" type="string" not-null="true"/>
+
+    </class>
+</hibernate-mapping>

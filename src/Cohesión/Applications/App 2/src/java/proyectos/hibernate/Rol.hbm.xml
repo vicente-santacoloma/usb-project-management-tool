@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="proyectos.hibernate.Rol" table="ROL">
+      <!-- 0 -->
+      <id name="idRol" column="idRol">
+        <generator class="native"/>
+      </id>
+
+      <!-- 1 -->
+      <property name="nombre" column="nombre" type="string" not-null="true"/>
+      <!-- 2 -->
+      <property name="descripcion" column="descripcion" type="text" not-null="true"/>
+      <!-- 3 -->
+      <set name="participantes" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="rol"/>
+        <one-to-many class="proyectos.hibernate.RolParticipante"/>
+      </set>
+      <!-- 4 -->
+      <many-to-one name="metodologia" column="metodologia" not-null="true" />
+    </class>
+</hibernate-mapping>

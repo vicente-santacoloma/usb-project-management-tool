@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="proyectos.hibernate.Artefacto" table="ARTEFACTO">
+      <!-- 0 -->
+      <id name="idArtefacto" column="idArtefacto">
+        <generator class="native"/>
+      </id>
+
+      <!-- 1 -->
+      <property name="titulo" column="titulo" type="string" not-null="true"/>
+      <!-- 2 -->
+      <property name="tamano" column="tamano" type="long" not-null="true"/>
+      <!-- 3 -->
+      <property name="contenido" column="contenido" type="binary" not-null="true"/>
+      <!-- 4 -->
+      <many-to-one name="actividad" column="actividad" not-null="true" />      <!-- 5 -->
+      <set name="usos" inverse="true" fetch="subselect"
+        cascade="all, delete-orphan">
+        <key column="documento"/>
+        <one-to-many class="proyectos.hibernate.ActividadArtefacto"/>
+      </set>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,9 @@
+Rojos -> Vicente
+Verde -> Gabriel Casique
+Amarillo -> Narbelys
+Azul claro -> Daniela
+Azul Oscuro -> Fernando
+
+Manana Miercoles reunirse a las 3 30, necesito informe de estado a las 6:00pm.
+
+Formato IDs de CU. Palabra "CU" + numero correspondiente (ver ultimo diagrama). Ejemplos: CU001, CU012

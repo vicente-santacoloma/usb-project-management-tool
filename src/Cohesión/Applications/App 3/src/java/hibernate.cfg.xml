@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+        <!-- Database connection settings for postgresql -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql:proyectos</property>
+        <property name="hibernate.connection.username">proyectos</property>
+        <property name="hibernate.connection.password">proyectos</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Uncomment this line to drop and re-create the database schema on startup
+        <property name="hbm2ddl.auto">create</property>
+         -->
+          
+        <mapping resource="proyectos/hibernate/Actividad.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/ActividadArtefacto.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/ActividadParticipante.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/ActividadPre.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/Artefacto.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/Metodologia.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/Participantes.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/Proyecto.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/ProyectoParticipante.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/Rol.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/RolActividad.hbm.xml"/>
+        <mapping resource="proyectos/hibernate/RolParticipante.hbm.xml"/>
+
+    </session-factory>
+
+</hibernate-configuration>

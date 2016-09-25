@@ -1,0 +1,1284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="FActividad" type="proyectos.FActividad"/>
+        <form-bean name="FActividadArtefacto" type="proyectos.FActividadArtefacto"/>
+        <form-bean name="FActividadParticipante" type="proyectos.FActividadParticipante"/>
+        <form-bean name="FActividadParticipanteBuscar" type="proyectos.FActividadParticipanteBuscar"/>
+        <form-bean name="FActividadPre" type="proyectos.FActividadPre"/>
+        <form-bean name="FArtefacto" type="proyectos.FArtefacto"/>
+        <form-bean name="FArtefactoBuscar" type="proyectos.FArtefactoBuscar"/>
+        <form-bean name="FBusqueda" type="proyectos.FBusqueda"/>
+        <form-bean name="FIniciarSesion" type="proyectos.FIniciarSesion"/>
+        <form-bean name="FMetodologia" type="proyectos.FMetodologia"/>
+        <form-bean name="FMetodologiaBuscar" type="proyectos.FMetodologiaBuscar"/>
+        <form-bean name="FParticipantes" type="proyectos.FParticipantes"/>
+        <form-bean name="FParticipantesBuscar" type="proyectos.FParticipantesBuscar"/>
+        <form-bean name="FProyecto" type="proyectos.FProyecto"/>
+        <form-bean name="FProyectoParticipante" type="proyectos.FProyectoParticipante"/>
+        <form-bean name="FProyectoParticipanteBuscar" type="proyectos.FProyectoParticipanteBuscar"/>
+        <form-bean name="FRecuperarContrasena" type="proyectos.FRecuperarContrasena"/>
+        <form-bean name="FRol" type="proyectos.FRol"/>
+        <form-bean name="FRolActividad" type="proyectos.FRolActividad"/>
+        <form-bean name="FRolParticipante" type="proyectos.FRolParticipante"/>
+        <form-bean name="F_Andreina_Login" type="proyectos.F_Andreina_Login"/>
+        <form-bean name="F_Andreina_Registro" type="proyectos.F_Andreina_Registro"/>
+        <form-bean name="F_CrearProyecto" type="proyectos.F_CrearProyecto"/>
+        <form-bean name="F_Cristina_Login" type="proyectos.F_Cristina_Login"/>
+        <form-bean name="F_Cristina_Registro" type="proyectos.F_Cristina_Registro"/>
+        <form-bean name="F_EditarRol" type="proyectos.F_EditarRol"/>
+        <form-bean name="F_FV_Login" type="proyectos.F_FV_Login"/>
+        <form-bean name="F_FV_Registro" type="proyectos.F_FV_Registro"/>
+        <form-bean name="F_GestinoarProyectos" type="proyectos.F_GestinoarProyectos"/>
+        <form-bean name="F_ListaRoles" type="proyectos.F_ListaRoles"/>
+        <form-bean name="F_ModificarProyecto" type="proyectos.F_ModificarProyecto"/>
+        <form-bean name="F_RegistrarUsuario" type="proyectos.F_RegistrarUsuario"/>
+        <form-bean name="F_daniela_login" type="proyectos.F_daniela_login"/>
+        <form-bean name="F_daniela_registro" type="proyectos.F_daniela_registro"/>
+        <form-bean name="F_gestionarInvitacionProyecto" type="proyectos.F_gestionarInvitacionProyecto"/>
+        <form-bean name="F_invitarParticipanteProyecto" type="proyectos.F_invitarParticipanteProyecto"/>
+        <form-bean name="F_linda_Login" type="proyectos.F_linda_Login"/>
+        <form-bean name="F_linda_Registro" type="proyectos.F_linda_Registro"/>
+
+    </form-beans>
+    
+    <global-exceptions>
+        
+    </global-exceptions>
+    
+    <global-forwards>
+
+        <!-- actividad -->
+
+        <forward name="APreCrear_actividad_actividad" path="/APreCrear_actividad_actividad.do"/>
+        <forward name="VCrear_actividad_actividad" path="/actividad/VCrear_actividad_actividad.jsp"/>
+        <forward name="APreCrear_actividad_proyecto" path="/APreCrear_actividad_proyecto.do"/>
+        <forward name="VCrear_actividad_proyecto" path="/actividad/VCrear_actividad_proyecto.jsp"/>
+        <forward name="APre_actividad" path="/APre_actividad.do"/>
+        <forward name="V_actividad" path="/actividad/V_actividad.jsp"/>
+        <forward name="AAct_actividad" path="/AAct_actividad.do"/>
+        <forward name="AElim_actividad" path="/AElim_actividad.do"/>
+        <forward name="ACrear_actividad" path="/ACrear_actividad.do"/>
+
+        <!-- actividadArtefacto -->
+
+        <forward name="APreCrear_actividadArtefacto" path="/APreCrear_actividadArtefacto.do"/>
+        <forward name="VCrear_actividadArtefacto" path="/actividadartefacto/VCrear_actividadArtefacto.jsp"/>
+        <forward name="APreListar_actividadArtefacto" path="/APreListar_actividadArtefacto.do"/>
+        <forward name="VListar_actividadArtefacto" path="/actividadartefacto/VListar_actividadArtefacto.jsp"/>
+        <forward name="APre_actividadArtefacto" path="/APre_actividadArtefacto.do"/>
+        <forward name="V_actividadArtefacto" path="/actividadartefacto/V_actividadArtefacto.jsp"/>
+        <forward name="AAct_actividadArtefacto" path="/AAct_actividadArtefacto.do"/>
+        <forward name="AElim_actividadArtefacto" path="/AElim_actividadArtefacto.do"/>
+        <forward name="ACrear_actividadArtefacto" path="/ACrear_actividadArtefacto.do"/>
+        <forward name="APreCrear_actividadArtefacto_artefacto" path="/APreCrear_actividadArtefacto_artefacto.do"/>
+        <forward name="VCrear_actividadArtefacto_artefacto" path="/actividadartefacto/VCrear_actividadArtefacto_artefacto.jsp"/>
+
+        <!-- actividadParticipante -->
+
+        <forward name="APreCrear_actividadParticipante" path="/APreCrear_actividadParticipante.do"/>
+        <forward name="VCrear_actividadParticipante" path="/actividadparticipante/VCrear_actividadParticipante.jsp"/>
+        <forward name="APreBuscar_actividadParticipante" path="/APreBuscar_actividadParticipante.do"/>
+        <forward name="VBuscar_actividadParticipante" path="/actividadparticipante/VBuscar_actividadParticipante.jsp"/>
+        <forward name="ABuscar_actividadParticipante" path="/ABuscar_actividadParticipante.do"/>
+        <forward name="APreListar_actividadParticipante" path="/APreListar_actividadParticipante.do"/>
+        <forward name="VListar_actividadParticipante" path="/actividadparticipante/VListar_actividadParticipante.jsp"/>
+        <forward name="APre_actividadParticipante" path="/APre_actividadParticipante.do"/>
+        <forward name="V_actividadParticipante" path="/actividadparticipante/V_actividadParticipante.jsp"/>
+        <forward name="AAct_actividadParticipante" path="/AAct_actividadParticipante.do"/>
+        <forward name="AElim_actividadParticipante" path="/AElim_actividadParticipante.do"/>
+        <forward name="ACrear_actividadParticipante" path="/ACrear_actividadParticipante.do"/>
+        <forward name="APreCrear_actividadParticipante_participantes" path="/APreCrear_actividadParticipante_participantes.do"/>
+        <forward name="VCrear_actividadParticipante_participantes" path="/actividadparticipante/VCrear_actividadParticipante_participantes.jsp"/>
+        <forward name="APreCrear_actividadParticipante_actividad" path="/APreCrear_actividadParticipante_actividad.do"/>
+        <forward name="VCrear_actividadParticipante_actividad" path="/actividadparticipante/VCrear_actividadParticipante_actividad.jsp"/>
+
+        <!-- actividadPre -->
+
+        <forward name="APreCrear_actividadPre" path="/APreCrear_actividadPre.do"/>
+        <forward name="VCrear_actividadPre" path="/actividadpre/VCrear_actividadPre.jsp"/>
+        <forward name="APreListar_actividadPre" path="/APreListar_actividadPre.do"/>
+        <forward name="VListar_actividadPre" path="/actividadpre/VListar_actividadPre.jsp"/>
+        <forward name="APre_actividadPre" path="/APre_actividadPre.do"/>
+        <forward name="V_actividadPre" path="/actividadpre/V_actividadPre.jsp"/>
+        <forward name="AAct_actividadPre" path="/AAct_actividadPre.do"/>
+        <forward name="AElim_actividadPre" path="/AElim_actividadPre.do"/>
+        <forward name="ACrear_actividadPre" path="/ACrear_actividadPre.do"/>
+        <forward name="APreCrear_actividadPre_actividad" path="/APreCrear_actividadPre_actividad.do"/>
+        <forward name="VCrear_actividadPre_actividad" path="/actividadpre/VCrear_actividadPre_actividad.jsp"/>
+
+        <!-- artefacto -->
+
+        <forward name="APreCrear_artefacto" path="/APreCrear_artefacto.do"/>
+        <forward name="VCrear_artefacto" path="/artefacto/VCrear_artefacto.jsp"/>
+        <forward name="APreBuscar_artefacto" path="/APreBuscar_artefacto.do"/>
+        <forward name="VBuscar_artefacto" path="/artefacto/VBuscar_artefacto.jsp"/>
+        <forward name="ABuscar_artefacto" path="/ABuscar_artefacto.do"/>
+        <forward name="APreListar_artefacto" path="/APreListar_artefacto.do"/>
+        <forward name="VListar_artefacto" path="/artefacto/VListar_artefacto.jsp"/>
+        <forward name="APre_artefacto" path="/APre_artefacto.do"/>
+        <forward name="V_artefacto" path="/artefacto/V_artefacto.jsp"/>
+        <forward name="AAct_artefacto" path="/AAct_artefacto.do"/>
+        <forward name="AElim_artefacto" path="/AElim_artefacto.do"/>
+        <forward name="ACrear_artefacto" path="/ACrear_artefacto.do"/>
+
+        <!-- metodologia -->
+
+        <forward name="APreCrear_metodologia" path="/APreCrear_metodologia.do"/>
+        <forward name="VCrear_metodologia" path="/metodologia/VCrear_metodologia.jsp"/>
+        <forward name="APreBuscar_metodologia" path="/APreBuscar_metodologia.do"/>
+        <forward name="VBuscar_metodologia" path="/metodologia/VBuscar_metodologia.jsp"/>
+        <forward name="ABuscar_metodologia" path="/ABuscar_metodologia.do"/>
+        <forward name="APreListar_metodologia" path="/APreListar_metodologia.do"/>
+        <forward name="VListar_metodologia" path="/metodologia/VListar_metodologia.jsp"/>
+        <forward name="APre_metodologia" path="/APre_metodologia.do"/>
+        <forward name="V_metodologia" path="/metodologia/V_metodologia.jsp"/>
+        <forward name="AAct_metodologia" path="/AAct_metodologia.do"/>
+        <forward name="AElim_metodologia" path="/AElim_metodologia.do"/>
+        <forward name="ACrear_metodologia" path="/ACrear_metodologia.do"/>
+
+        <!-- participantes -->
+
+        <forward name="APreCrear_participantes" path="/APreCrear_participantes.do"/>
+        <forward name="VCrear_participantes" path="/participantes/VCrear_participantes.jsp"/>
+        <forward name="APreBuscar_participantes" path="/APreBuscar_participantes.do"/>
+        <forward name="VBuscar_participantes" path="/participantes/VBuscar_participantes.jsp"/>
+        <forward name="ABuscar_participantes" path="/ABuscar_participantes.do"/>
+        <forward name="APreListar_participantes" path="/APreListar_participantes.do"/>
+        <forward name="VListar_participantes" path="/participantes/VListar_participantes.jsp"/>
+        <forward name="APre_participantes" path="/APre_participantes.do"/>
+        <forward name="V_participantes" path="/participantes/V_participantes.jsp"/>
+        <forward name="AAct_participantes" path="/AAct_participantes.do"/>
+        <forward name="AElim_participantes" path="/AElim_participantes.do"/>
+        <forward name="ACrear_participantes" path="/ACrear_participantes.do"/>
+
+        <!-- proyecto -->
+
+        <forward name="APreCrear_proyecto_metodologia" path="/APreCrear_proyecto_metodologia.do"/>
+        <forward name="VCrear_proyecto_metodologia" path="/proyecto/VCrear_proyecto_metodologia.jsp"/>
+        <forward name="APre_proyecto" path="/APre_proyecto.do"/>
+        <forward name="V_proyecto" path="/proyecto/V_proyecto.jsp"/>
+        <forward name="AAct_proyecto" path="/AAct_proyecto.do"/>
+        <forward name="AElim_proyecto" path="/AElim_proyecto.do"/>
+        <forward name="ACrear_proyecto" path="/ACrear_proyecto.do"/>
+
+        <!-- proyectoParticipante -->
+
+        <forward name="APreCrear_proyectoParticipante" path="/APreCrear_proyectoParticipante.do"/>
+        <forward name="VCrear_proyectoParticipante" path="/proyectoparticipante/VCrear_proyectoParticipante.jsp"/>
+        <forward name="APreBuscar_proyectoParticipante" path="/APreBuscar_proyectoParticipante.do"/>
+        <forward name="VBuscar_proyectoParticipante" path="/proyectoparticipante/VBuscar_proyectoParticipante.jsp"/>
+        <forward name="ABuscar_proyectoParticipante" path="/ABuscar_proyectoParticipante.do"/>
+        <forward name="APreListar_proyectoParticipante" path="/APreListar_proyectoParticipante.do"/>
+        <forward name="VListar_proyectoParticipante" path="/proyectoparticipante/VListar_proyectoParticipante.jsp"/>
+        <forward name="APre_proyectoParticipante" path="/APre_proyectoParticipante.do"/>
+        <forward name="V_proyectoParticipante" path="/proyectoparticipante/V_proyectoParticipante.jsp"/>
+        <forward name="AAct_proyectoParticipante" path="/AAct_proyectoParticipante.do"/>
+        <forward name="AElim_proyectoParticipante" path="/AElim_proyectoParticipante.do"/>
+        <forward name="ACrear_proyectoParticipante" path="/ACrear_proyectoParticipante.do"/>
+        <forward name="APreCrear_proyectoParticipante_participantes" path="/APreCrear_proyectoParticipante_participantes.do"/>
+        <forward name="VCrear_proyectoParticipante_participantes" path="/proyectoparticipante/VCrear_proyectoParticipante_participantes.jsp"/>
+
+        <!-- rol -->
+
+        <forward name="APreCrear_rol_metodologia" path="/APreCrear_rol_metodologia.do"/>
+        <forward name="VCrear_rol_metodologia" path="/rol/VCrear_rol_metodologia.jsp"/>
+        <forward name="APre_rol" path="/APre_rol.do"/>
+        <forward name="V_rol" path="/rol/V_rol.jsp"/>
+        <forward name="AAct_rol" path="/AAct_rol.do"/>
+        <forward name="AElim_rol" path="/AElim_rol.do"/>
+        <forward name="ACrear_rol" path="/ACrear_rol.do"/>
+
+        <!-- rolActividad -->
+
+        <forward name="APreCrear_rolActividad" path="/APreCrear_rolActividad.do"/>
+        <forward name="VCrear_rolActividad" path="/rolactividad/VCrear_rolActividad.jsp"/>
+        <forward name="APreListar_rolActividad" path="/APreListar_rolActividad.do"/>
+        <forward name="VListar_rolActividad" path="/rolactividad/VListar_rolActividad.jsp"/>
+        <forward name="APre_rolActividad" path="/APre_rolActividad.do"/>
+        <forward name="V_rolActividad" path="/rolactividad/V_rolActividad.jsp"/>
+        <forward name="AAct_rolActividad" path="/AAct_rolActividad.do"/>
+        <forward name="AElim_rolActividad" path="/AElim_rolActividad.do"/>
+        <forward name="ACrear_rolActividad" path="/ACrear_rolActividad.do"/>
+        <forward name="APreCrear_rolActividad_actividad" path="/APreCrear_rolActividad_actividad.do"/>
+        <forward name="VCrear_rolActividad_actividad" path="/rolactividad/VCrear_rolActividad_actividad.jsp"/>
+
+        <!-- rolParticipante -->
+
+        <forward name="APreCrear_rolParticipante_participantes" path="/APreCrear_rolParticipante_participantes.do"/>
+        <forward name="VCrear_rolParticipante_participantes" path="/rolparticipante/VCrear_rolParticipante_participantes.jsp"/>
+        <forward name="APreCrear_rolParticipante_rol" path="/APreCrear_rolParticipante_rol.do"/>
+        <forward name="VCrear_rolParticipante_rol" path="/rolparticipante/VCrear_rolParticipante_rol.jsp"/>
+        <forward name="APre_rolParticipante" path="/APre_rolParticipante.do"/>
+        <forward name="V_rolParticipante" path="/rolparticipante/V_rolParticipante.jsp"/>
+        <forward name="AAct_rolParticipante" path="/AAct_rolParticipante.do"/>
+        <forward name="AElim_rolParticipante" path="/AElim_rolParticipante.do"/>
+        <forward name="ACrear_rolParticipante" path="/ACrear_rolParticipante.do"/>
+
+        <!-- CU019 -->
+
+        <forward name="V_CreacionActividad" path="/cu019/V_CreacionActividad.jsp"/>
+        <forward name="A_PreCreacionActividad" path="/A_PreCreacionActividad.do"/>
+        <forward name="A_CrearActividad" path="/A_CrearActividad.do"/>
+
+        <!-- CU020 -->
+
+        <forward name="V_Actividad" path="/cu020/V_Actividad.jsp"/>
+        <forward name="A_PreConsultaActividad" path="/A_PreConsultaActividad.do"/>
+
+        <!-- CU023 -->
+
+        <forward name="V_ModificarActividad" path="/cu023/V_ModificarActividad.jsp"/>
+        <forward name="A_ModificarActividad" path="/A_ModificarActividad.do"/>
+        <forward name="A_PreModificarActividad" path="/A_PreModificarActividad.do"/>
+
+        <!-- CU024 -->
+
+        <forward name="A_PreEliminarActividad" path="/A_PreEliminarActividad.do"/>
+        <forward name="A_EliminarActividad" path="/A_EliminarActividad.do"/>
+
+        <!-- CU021 -->
+
+        <forward name="V_ActividadesPrecedentes" path="/cu021/V_ActividadesPrecedentes.jsp"/>
+        <forward name="A_PreActividadesPrecedentes" path="/A_PreActividadesPrecedentes.do"/>
+
+        <!-- CU022 -->
+
+        <forward name="V_ActividadesSucesoras" path="/cu022/V_ActividadesSucesoras.jsp"/>
+        <forward name="A_PreActividadesSucesoras" path="/A_PreActividadesSucesoras.do"/>
+
+        <!-- CU002 -->
+
+        <forward name="A_PreIniciarSesion" path="/A_PreIniciarSesion.do"/>
+        <forward name="V_IniciarSesion" path="/cu002/V_IniciarSesion.jsp"/>
+        <forward name="A_IniciarSesion" path="/A_IniciarSesion.do"/>
+        <forward name="A_InicioSistema" path="/A_InicioSistema.do"/>
+
+        <!-- CU006 -->
+
+        <forward name="V_ResultadoBusqueda" path="/cu006/V_ResultadoBusqueda.jsp"/>
+        <forward name="A_PreBusqueda" path="/A_PreBusqueda.do"/>
+
+        <!-- CU016 -->
+
+        <forward name="A_PreProyectosParticipante" path="/A_PreProyectosParticipante.do"/>
+        <forward name="V_ProyectosParticipante" path="/cu016/V_ProyectosParticipante.jsp"/>
+
+        <!-- CU014 -->
+
+        <forward name="V_GestionarActividades" path="/cu014/V_GestionarActividades.jsp"/>
+        <forward name="A_PreGestionarActividades" path="/A_PreGestionarActividades.do"/>
+
+        <!-- CU037 -->
+
+        <forward name="V_modificarProyecto" path="/cu037/V_modificarProyecto.jsp"/>
+        <forward name="A_premodificarProyecto" path="/A_premodificarProyecto.do"/>
+        <forward name="A_modificarProyecto" path="/A_modificarProyecto.do"/>
+
+        <!-- CU001 -->
+
+        <forward name="V_Registrar" path="/cu001/V_Registrar.jsp"/>
+        <forward name="A_Registrar" path="/A_Registrar.do"/>
+        <forward name="A_PreRegistrar" path="/A_PreRegistrar.do"/>
+
+        <!-- CU056 -->
+
+        <forward name="V_AgregarRolActividad" path="/cu056/V_AgregarRolActividad.jsp"/>
+        <forward name="A_AgregarRolActividad" path="/A_AgregarRolActividad.do"/>
+        <forward name="A_PreAgregarRol" path="/A_PreAgregarRol.do"/>
+
+        <!-- CU010 -->
+
+        <forward name="V_invitarParticipanteProyecto" path="/cu010/V_invitarParticipanteProyecto.jsp"/>
+        <forward name="A_invitarParticipanteProyecto" path="/A_invitarParticipanteProyecto.do"/>
+        <forward name="A_PreInvitarUsuario" path="/A_PreInvitarUsuario.do"/>
+
+        <!-- CU008 -->
+
+        <forward name="V_solicitarParticipacionProyecto" path="/cu008/V_solicitarParticipacionProyecto.jsp"/>
+        <forward name="A_solicitarParticipacionProyecto" path="/A_solicitarParticipacionProyecto.do"/>
+
+        <!-- CU032 -->
+
+        <forward name="V_ListarRoles" path="/cu032/V_ListarRoles.jsp"/>
+        <forward name="A_PreListarRoles" path="/A_PreListarRoles.do"/>
+
+        <!-- CU033 -->
+
+        <forward name="V_ListarActividadesRol" path="/cu033/V_ListarActividadesRol.jsp"/>
+        <forward name="A_PreListarActividadesRol" path="/A_PreListarActividadesRol.do"/>
+
+        <!-- CU009 -->
+
+        <forward name="V_gestionarInvitacionProyecto" path="/cu009/V_gestionarInvitacionProyecto.jsp"/>
+        <forward name="A_gestionarInvitacionProyecto" path="/A_gestionarInvitacionProyecto.do"/>
+        <forward name="A_AceptarInvitacionProyecto" path="/A_AceptarInvitacionProyecto.do"/>
+        <forward name="A_DenegarInvitacionProyecto" path="/A_DenegarInvitacionProyecto.do"/>
+
+        <!-- CU058 -->
+
+        <forward name="V_EditarRol" path="/cu058/V_EditarRol.jsp"/>
+        <forward name="A_PreEditarRol" path="/A_PreEditarRol.do"/>
+        <forward name="A_EditarRol" path="/A_EditarRol.do"/>
+
+        <!-- CU059 -->
+
+        <forward name="V_EliminarRol" path="/cu059/V_EliminarRol.jsp"/>
+        <forward name="A_PreEliminarRol" path="/A_PreEliminarRol.do"/>
+        <forward name="A_EliminarRol" path="/A_EliminarRol.do"/>
+
+        <!-- CU027 -->
+
+        <forward name="V_agregarSubActividad" path="/cu027/V_agregarSubActividad.jsp"/>
+        <forward name="A_agregarSubActividad" path="/A_agregarSubActividad.do"/>
+        <forward name="A_PreAgregarSubActividad" path="/A_PreAgregarSubActividad.do"/>
+
+        <!-- CU036 -->
+
+        <forward name="A_PreConsultarProyecto" path="/A_PreConsultarProyecto.do"/>
+        <forward name="V_ConsultarProyecto" path="/cu036/V_ConsultarProyecto.jsp"/>
+        <forward name="A_EliminarProyecto" path="/A_EliminarProyecto.do"/>
+
+        <!-- CU041 -->
+
+        <forward name="V_CrearArtefacto" path="/cu041/V_CrearArtefacto.jsp"/>
+        <forward name="A_CrearArtefacto" path="/A_CrearArtefacto.do"/>
+        <forward name="A_PreCrearArtefacto" path="/A_PreCrearArtefacto.do"/>
+
+        <!-- CU042 -->
+
+        <forward name="V_ConsultarArtefacto" path="/cu042/V_ConsultarArtefacto.jsp"/>
+        <forward name="A_PreConsultarArtefacto" path="/A_PreConsultarArtefacto.do"/>
+        <forward name="A_DescargarArtefacto" path="/A_DescargarArtefacto.do"/>
+
+        <!-- CU043 -->
+
+        <forward name="V_ModificarArtefacto" path="/cu043/V_ModificarArtefacto.jsp"/>
+        <forward name="A_ModificarArtefacto" path="/A_ModificarArtefacto.do"/>
+        <forward name="A_PreModificarArtefacto" path="/A_PreModificarArtefacto.do"/>
+
+        <!-- CU018 -->
+
+        <forward name="V_ParticipantesRol" path="/cu018/V_ParticipantesRol.jsp"/>
+        <forward name="A_ParticipantesRol" path="/A_ParticipantesRol.do"/>
+
+        <!-- CU056 -->
+
+        <forward name="V_AgregarRol" path="/cu056/V_AgregarRol.jsp"/>
+        <forward name="A_AgregarRol" path="/A_AgregarRol.do"/>
+        <forward name="A_PreAgregarRolx" path="/A_PreAgregarRolx.do"/>
+
+        <!-- CU007 -->
+
+        <forward name="V_ConsultarPerfil" path="/cu007/V_ConsultarPerfil.jsp"/>
+        <forward name="A_PreConsultarPerfil" path="/A_PreConsultarPerfil.do"/>
+        <forward name="A_CerrarSesion" path="/A_CerrarSesion.do"/>
+
+        <!-- CU039 -->
+
+        <forward name="V_AsignarMetodologia" path="/cu039/V_AsignarMetodologia.jsp"/>
+        <forward name="A_AsignarMetodologia" path="/A_AsignarMetodologia.do"/>
+
+        <!-- CU057 -->
+
+        <forward name="V_ConsultarRol" path="/cu057/V_ConsultarRol.jsp"/>
+        <forward name="A_PreConsultarRol" path="/A_PreConsultarRol.do"/>
+        <forward name="A_ConsultarRol" path="/A_ConsultarRol.do"/>
+
+        <!-- CU005 -->
+
+        <forward name="V_GestionarUsuarios" path="/cu005/V_GestionarUsuarios.jsp"/>
+        <forward name="A_GestionarUsuarios" path="/A_GestionarUsuarios.do"/>
+
+        <!-- CU004 -->
+
+        <forward name="V_ModificarPerfil" path="/cu004/V_ModificarPerfil.jsp"/>
+        <forward name="A_PreModificarPerfil" path="/A_PreModificarPerfil.do"/>
+        <forward name="A_ModificarPerfil" path="/A_ModificarPerfil.do"/>
+
+        <!-- CU040 -->
+
+        <forward name="V_GestionarParticipante" path="/cu040/V_GestionarParticipante.jsp"/>
+        <forward name="A_PreGestionarParticipante" path="/A_PreGestionarParticipante.do"/>
+
+        <!-- CU003 -->
+
+        <forward name="V_RecuperarContrasena" path="/cu003/V_RecuperarContrasena.jsp"/>
+        <forward name="A_PreRecuperarContrasena" path="/A_PreRecuperarContrasena.do"/>
+        <forward name="A_RecuperarContrasena" path="/A_RecuperarContrasena.do"/>
+
+        <!-- CU031 -->
+
+        <forward name="A_PreGestionParticipantes" path="/A_PreGestionParticipantes.do"/>
+        <forward name="V_GestionarParticipantes" path="/cu031/V_GestionarParticipantes.jsp"/>
+
+        <!-- CU044 -->
+
+        <forward name="A_CargaListaAct" path="/A_CargaListaAct.do"/>
+        <forward name="V_ListaAct" path="/cu044/V_ListaAct.jsp"/>
+
+        <!-- CU034 -->
+
+        <forward name="V_CrearProyecto" path="/cu034/V_CrearProyecto.jsp"/>
+        <forward name="A_CrearProyecto" path="/A_CrearProyecto.do"/>
+        <forward name="A_PreCrearProyecto" path="/A_PreCrearProyecto.do"/>
+
+        <!-- CU035 -->
+
+        <forward name="V_GestionarProyecto" path="/cu035/V_GestionarProyecto.jsp"/>
+        <forward name="A_PreGestionarProyecto" path="/A_PreGestionarProyecto.do"/>
+
+        <!-- CU048 -->
+
+        <forward name="A_CargaMetodologia" path="/A_CargaMetodologia.do"/>
+        <forward name="V_ListaMetodologia" path="/cu048/V_ListaMetodologia.jsp"/>
+        <forward name="A_CargaInfoMetodologia" path="/A_CargaInfoMetodologia.do"/>
+        <forward name="V_InfoMetodologia" path="/cu048/V_InfoMetodologia.jsp"/>
+        <forward name="V_ConsultarMetodologia" path="/cu048/V_ConsultarMetodologia.jsp"/>
+
+        <!-- CU046 -->
+
+        <forward name="V_GestionarMetodologia" path="/cu046/V_GestionarMetodologia.jsp"/>
+        <forward name="A_GestionarMetodologia" path="/A_GestionarMetodologia.do"/>
+
+        <!-- CU049 -->
+
+        <forward name="V_EditarMetodologia" path="/cu049/V_EditarMetodologia.jsp"/>
+        <forward name="A_PreEditarMetodologia" path="/A_PreEditarMetodologia.do"/>
+        <forward name="A_EditarMetodologia" path="/A_EditarMetodologia.do"/>
+
+        <!-- CU050 -->
+
+        <forward name="A_PreEliminarMetodologia" path="/A_PreEliminarMetodologia.do"/>
+        <forward name="V_EliminarMetodologia" path="/cu050/V_EliminarMetodologia.jsp"/>
+        <forward name="A_EliminarMetodologia" path="/A_EliminarMetodologia.do"/>
+
+        <!-- CU051 -->
+
+        <forward name="A_PreCambiarEdoMetodologia" path="/A_PreCambiarEdoMetodologia.do"/>
+        <forward name="V_CambiarEdoMetodologia" path="/cu051/V_CambiarEdoMetodologia.jsp"/>
+        <forward name="A_CambiarEdoMetologia" path="/A_CambiarEdoMetologia.do"/>
+
+        <!-- CU025 -->
+
+        <!-- CU047 -->
+
+        <forward name="V_CrearMetodologia" path="/cu047/V_CrearMetodologia.jsp"/>
+        <forward name="A_PreCrearMetodologia" path="/A_PreCrearMetodologia.do"/>
+        <forward name="A_CrearMetodologia" path="/A_CrearMetodologia.do"/>
+
+        <!-- CU052 -->
+
+        <forward name="V_AgregarProcesoSoftware" path="/cu052/V_AgregarProcesoSoftware.jsp"/>
+        <forward name="A_PreAgregarProcesoSoftware" path="/A_PreAgregarProcesoSoftware.do"/>
+        <forward name="A_AgregarProcesoSoftware" path="/A_AgregarProcesoSoftware.do"/>
+
+        <!-- CU055 -->
+
+        <forward name="V_EliminarProcesoSoftware" path="/cu055/V_EliminarProcesoSoftware.jsp"/>
+        <forward name="A_PreEliminarProcesoSoftware" path="/A_PreEliminarProcesoSoftware.do"/>
+        <forward name="A_EliminarProcesoSoftware" path="/A_EliminarProcesoSoftware.do"/>
+
+        <!-- CU054 -->
+
+        <forward name="V_EditarProcesoSoftware" path="/cu054/V_EditarProcesoSoftware.jsp"/>
+        <forward name="A_PreEditarProcesoSoftware" path="/A_PreEditarProcesoSoftware.do"/>
+        <forward name="A_EditarProcesoSoftware" path="/A_EditarProcesoSoftware.do"/>
+
+        <!-- CU028 -->
+
+        <forward name="A_PreAsignarPrecedente" path="/A_PreAsignarPrecedente.do"/>
+        <forward name="V_AsignarPrecedente" path="/cu028/V_AsignarPrecedente.jsp"/>
+        <forward name="A_AsignarPrecedente" path="/A_AsignarPrecedente.do"/>
+
+        <!-- CU012 -->
+
+        <forward name="A_PreEliminarParticipanteProy" path="/A_PreEliminarParticipanteProy.do"/>
+        <forward name="A_EliminarParticipanteProy" path="/A_EliminarParticipanteProy.do"/>
+
+        <!-- CU029 -->
+
+        <forward name="A_PreAsignarSucesora" path="/A_PreAsignarSucesora.do"/>
+        <forward name="V_AsignarSucesora" path="/cu029/V_AsignarSucesora.jsp"/>
+        <forward name="A_AsignarSucesora" path="/A_AsignarSucesora.do"/>
+
+        <!-- CU030 -->
+
+        <forward name="A_PreMostrarGrafo" path="/A_PreMostrarGrafo.do"/>
+        <forward name="V_MostrarGrafo" path="/cu030/V_MostrarGrafo.jsp"/>
+
+        <!-- CU011 -->
+
+        <forward name="A_PreAsignarRol" path="/A_PreAsignarRol.do"/>
+        <forward name="V_AsignarRol" path="/cu011/V_AsignarRol.jsp"/>
+        <forward name="A_AsignarRol" path="/A_AsignarRol.do"/>
+
+        <!-- CU013 -->
+
+        <forward name="A_PreAbandonar" path="/A_PreAbandonar.do"/>
+        <forward name="A_Abandonar" path="/A_Abandonar.do"/>
+
+        <!-- CU053 -->
+
+        <forward name="A_PreConsultarProceso" path="/A_PreConsultarProceso.do"/>
+        <forward name="V_ProcesoSoftware" path="/cu053/V_ProcesoSoftware.jsp"/>
+
+        <forward name="tooltip" path="/tooltip.do"/>
+        <forward name="Info" path="/_tooltips/Info.jsp"/>
+    </global-forwards>
+    
+    <action-mappings>
+
+        <!-- actividad -->
+        <action path="/APreCrear_actividad_actividad" parameter="APreCrear_actividad_actividad"
+           type="proyectos.AccionesActividad"/>
+        <action path="/APreCrear_actividad_proyecto" parameter="APreCrear_actividad_proyecto"
+           type="proyectos.AccionesActividad"/>
+        <action path="/APre_actividad" parameter="APre_actividad"
+           type="proyectos.AccionesActividad"/>
+        <action path="/AAct_actividad" parameter="AAct_actividad"
+           type="proyectos.AccionesActividad"
+           input="/actividad/V_actividad.jsp"
+           name="FActividad"
+           scope="session"/>
+        <action path="/AElim_actividad" parameter="AElim_actividad"
+           type="proyectos.AccionesActividad"/>
+        <action path="/ACrear_actividad" parameter="ACrear_actividad"
+           type="proyectos.AccionesActividad"
+           input="/actividad/VCrear_actividad_actividad.jsp"
+           name="FActividad"
+           scope="session"/>
+
+
+        <!-- actividadArtefacto -->
+        <action path="/APreCrear_actividadArtefacto" parameter="APreCrear_actividadArtefacto"
+           type="proyectos.AccionesActividadArtefacto"/>
+        <action path="/APreListar_actividadArtefacto" parameter="APreListar_actividadArtefacto"
+           type="proyectos.AccionesActividadArtefacto"/>
+        <action path="/APre_actividadArtefacto" parameter="APre_actividadArtefacto"
+           type="proyectos.AccionesActividadArtefacto"/>
+        <action path="/AAct_actividadArtefacto" parameter="AAct_actividadArtefacto"
+           type="proyectos.AccionesActividadArtefacto"
+           input="/actividadArtefacto/V_actividadArtefacto.jsp"
+           name="FActividadArtefacto"
+           scope="session"/>
+        <action path="/AElim_actividadArtefacto" parameter="AElim_actividadArtefacto"
+           type="proyectos.AccionesActividadArtefacto"/>
+        <action path="/ACrear_actividadArtefacto" parameter="ACrear_actividadArtefacto"
+           type="proyectos.AccionesActividadArtefacto"
+           input="/actividadArtefacto/VCrear_actividadArtefacto_artefacto.jsp"
+           name="FActividadArtefacto"
+           scope="session"/>
+        <action path="/APreCrear_actividadArtefacto_artefacto" parameter="APreCrear_actividadArtefacto_artefacto"
+           type="proyectos.AccionesActividadArtefacto"/>
+
+
+        <!-- actividadParticipante -->
+        <action path="/APreCrear_actividadParticipante" parameter="APreCrear_actividadParticipante"
+           type="proyectos.AccionesActividadParticipante"/>
+        <action path="/APreBuscar_actividadParticipante" parameter="APreBuscar_actividadParticipante"
+           type="proyectos.AccionesActividadParticipante"/>
+        <action path="/ABuscar_actividadParticipante" parameter="ABuscar_actividadParticipante"
+           type="proyectos.AccionesActividadParticipante"
+           input="/actividadParticipante/VBuscar_actividadParticipante.jsp"
+           name="FActividadParticipanteBuscar"
+           scope="session"/>
+        <action path="/APreListar_actividadParticipante" parameter="APreListar_actividadParticipante"
+           type="proyectos.AccionesActividadParticipante"/>
+        <action path="/APre_actividadParticipante" parameter="APre_actividadParticipante"
+           type="proyectos.AccionesActividadParticipante"/>
+        <action path="/AAct_actividadParticipante" parameter="AAct_actividadParticipante"
+           type="proyectos.AccionesActividadParticipante"
+           input="/actividadParticipante/V_actividadParticipante.jsp"
+           name="FActividadParticipante"
+           scope="session"/>
+        <action path="/AElim_actividadParticipante" parameter="AElim_actividadParticipante"
+           type="proyectos.AccionesActividadParticipante"/>
+        <action path="/ACrear_actividadParticipante" parameter="ACrear_actividadParticipante"
+           type="proyectos.AccionesActividadParticipante"
+           input="/actividadParticipante/VCrear_actividadParticipante.jsp"
+           name="FActividadParticipante"
+           scope="session"/>
+        <action path="/APreCrear_actividadParticipante_participantes" parameter="APreCrear_actividadParticipante_participantes"
+           type="proyectos.AccionesActividadParticipante"/>
+        <action path="/APreCrear_actividadParticipante_actividad" parameter="APreCrear_actividadParticipante_actividad"
+           type="proyectos.AccionesActividadParticipante"/>
+
+
+        <!-- actividadPre -->
+        <action path="/APreCrear_actividadPre" parameter="APreCrear_actividadPre"
+           type="proyectos.AccionesActividadPre"/>
+        <action path="/APreListar_actividadPre" parameter="APreListar_actividadPre"
+           type="proyectos.AccionesActividadPre"/>
+        <action path="/APre_actividadPre" parameter="APre_actividadPre"
+           type="proyectos.AccionesActividadPre"/>
+        <action path="/AAct_actividadPre" parameter="AAct_actividadPre"
+           type="proyectos.AccionesActividadPre"
+           input="/actividadPre/V_actividadPre.jsp"
+           name="FActividadPre"
+           scope="session"/>
+        <action path="/AElim_actividadPre" parameter="AElim_actividadPre"
+           type="proyectos.AccionesActividadPre"/>
+        <action path="/ACrear_actividadPre" parameter="ACrear_actividadPre"
+           type="proyectos.AccionesActividadPre"
+           input="/actividadPre/VCrear_actividadPre.jsp"
+           name="FActividadPre"
+           scope="session"/>
+        <action path="/APreCrear_actividadPre_actividad" parameter="APreCrear_actividadPre_actividad"
+           type="proyectos.AccionesActividadPre"/>
+
+
+        <!-- artefacto -->
+        <action path="/APreCrear_artefacto" parameter="APreCrear_artefacto"
+           type="proyectos.AccionesArtefacto"/>
+        <action path="/APreBuscar_artefacto" parameter="APreBuscar_artefacto"
+           type="proyectos.AccionesArtefacto"/>
+        <action path="/ABuscar_artefacto" parameter="ABuscar_artefacto"
+           type="proyectos.AccionesArtefacto"
+           input="/artefacto/VBuscar_artefacto.jsp"
+           name="FArtefactoBuscar"
+           scope="session"/>
+        <action path="/APreListar_artefacto" parameter="APreListar_artefacto"
+           type="proyectos.AccionesArtefacto"/>
+        <action path="/APre_artefacto" parameter="APre_artefacto"
+           type="proyectos.AccionesArtefacto"/>
+        <action path="/AAct_artefacto" parameter="AAct_artefacto"
+           type="proyectos.AccionesArtefacto"
+           input="/artefacto/V_artefacto.jsp"
+           name="FArtefacto"
+           scope="session"/>
+        <action path="/AElim_artefacto" parameter="AElim_artefacto"
+           type="proyectos.AccionesArtefacto"/>
+        <action path="/ACrear_artefacto" parameter="ACrear_artefacto"
+           type="proyectos.AccionesArtefacto"
+           input="/artefacto/VCrear_artefacto.jsp"
+           name="FArtefacto"
+           scope="session"/>
+
+
+        <!-- metodologia -->
+        <action path="/APreCrear_metodologia" parameter="APreCrear_metodologia"
+           type="proyectos.AccionesMetodologia"/>
+        <action path="/APreBuscar_metodologia" parameter="APreBuscar_metodologia"
+           type="proyectos.AccionesMetodologia"/>
+        <action path="/ABuscar_metodologia" parameter="ABuscar_metodologia"
+           type="proyectos.AccionesMetodologia"
+           input="/metodologia/VBuscar_metodologia.jsp"
+           name="FMetodologiaBuscar"
+           scope="session"/>
+        <action path="/APreListar_metodologia" parameter="APreListar_metodologia"
+           type="proyectos.AccionesMetodologia"/>
+        <action path="/APre_metodologia" parameter="APre_metodologia"
+           type="proyectos.AccionesMetodologia"/>
+        <action path="/AAct_metodologia" parameter="AAct_metodologia"
+           type="proyectos.AccionesMetodologia"
+           input="/metodologia/V_metodologia.jsp"
+           name="FMetodologia"
+           scope="session"/>
+        <action path="/AElim_metodologia" parameter="AElim_metodologia"
+           type="proyectos.AccionesMetodologia"/>
+        <action path="/ACrear_metodologia" parameter="ACrear_metodologia"
+           type="proyectos.AccionesMetodologia"
+           input="/metodologia/VCrear_metodologia.jsp"
+           name="FMetodologia"
+           scope="session"/>
+
+
+        <!-- participantes -->
+        <action path="/APreCrear_participantes" parameter="APreCrear_participantes"
+           type="proyectos.AccionesParticipantes"/>
+        <action path="/APreBuscar_participantes" parameter="APreBuscar_participantes"
+           type="proyectos.AccionesParticipantes"/>
+        <action path="/ABuscar_participantes" parameter="ABuscar_participantes"
+           type="proyectos.AccionesParticipantes"
+           input="/participantes/VBuscar_participantes.jsp"
+           name="FParticipantesBuscar"
+           scope="session"/>
+        <action path="/APreListar_participantes" parameter="APreListar_participantes"
+           type="proyectos.AccionesParticipantes"/>
+        <action path="/APre_participantes" parameter="APre_participantes"
+           type="proyectos.AccionesParticipantes"/>
+        <action path="/AAct_participantes" parameter="AAct_participantes"
+           type="proyectos.AccionesParticipantes"
+           input="/participantes/V_participantes.jsp"
+           name="FParticipantes"
+           scope="session"/>
+        <action path="/AElim_participantes" parameter="AElim_participantes"
+           type="proyectos.AccionesParticipantes"/>
+        <action path="/ACrear_participantes" parameter="ACrear_participantes"
+           type="proyectos.AccionesParticipantes"
+           input="/participantes/VCrear_participantes.jsp"
+           name="FParticipantes"
+           scope="session"/>
+
+
+        <!-- proyecto -->
+        <action path="/APreCrear_proyecto_metodologia" parameter="APreCrear_proyecto_metodologia"
+           type="proyectos.AccionesProyecto"/>
+        <action path="/APre_proyecto" parameter="APre_proyecto"
+           type="proyectos.AccionesProyecto"/>
+        <action path="/AAct_proyecto" parameter="AAct_proyecto"
+           type="proyectos.AccionesProyecto"
+           input="/proyecto/V_proyecto.jsp"
+           name="FProyecto"
+           scope="session"/>
+        <action path="/AElim_proyecto" parameter="AElim_proyecto"
+           type="proyectos.AccionesProyecto"/>
+        <action path="/ACrear_proyecto" parameter="ACrear_proyecto"
+           type="proyectos.AccionesProyecto"
+           input="/proyecto/VCrear_proyecto_metodologia.jsp"
+           name="FProyecto"
+           scope="session"/>
+
+
+        <!-- proyectoParticipante -->
+        <action path="/APreCrear_proyectoParticipante" parameter="APreCrear_proyectoParticipante"
+           type="proyectos.AccionesProyectoParticipante"/>
+        <action path="/APreBuscar_proyectoParticipante" parameter="APreBuscar_proyectoParticipante"
+           type="proyectos.AccionesProyectoParticipante"/>
+        <action path="/ABuscar_proyectoParticipante" parameter="ABuscar_proyectoParticipante"
+           type="proyectos.AccionesProyectoParticipante"
+           input="/proyectoParticipante/VBuscar_proyectoParticipante.jsp"
+           name="FProyectoParticipanteBuscar"
+           scope="session"/>
+        <action path="/APreListar_proyectoParticipante" parameter="APreListar_proyectoParticipante"
+           type="proyectos.AccionesProyectoParticipante"/>
+        <action path="/APre_proyectoParticipante" parameter="APre_proyectoParticipante"
+           type="proyectos.AccionesProyectoParticipante"/>
+        <action path="/AAct_proyectoParticipante" parameter="AAct_proyectoParticipante"
+           type="proyectos.AccionesProyectoParticipante"
+           input="/proyectoParticipante/V_proyectoParticipante.jsp"
+           name="FProyectoParticipante"
+           scope="session"/>
+        <action path="/AElim_proyectoParticipante" parameter="AElim_proyectoParticipante"
+           type="proyectos.AccionesProyectoParticipante"/>
+        <action path="/ACrear_proyectoParticipante" parameter="ACrear_proyectoParticipante"
+           type="proyectos.AccionesProyectoParticipante"
+           input="/proyectoParticipante/VCrear_proyectoParticipante.jsp"
+           name="FProyectoParticipante"
+           scope="session"/>
+        <action path="/APreCrear_proyectoParticipante_participantes" parameter="APreCrear_proyectoParticipante_participantes"
+           type="proyectos.AccionesProyectoParticipante"/>
+
+
+        <!-- rol -->
+        <action path="/APreCrear_rol_metodologia" parameter="APreCrear_rol_metodologia"
+           type="proyectos.AccionesRol"/>
+        <action path="/APre_rol" parameter="APre_rol"
+           type="proyectos.AccionesRol"/>
+        <action path="/AAct_rol" parameter="AAct_rol"
+           type="proyectos.AccionesRol"
+           input="/rol/V_rol.jsp"
+           name="FRol"
+           scope="session"/>
+        <action path="/AElim_rol" parameter="AElim_rol"
+           type="proyectos.AccionesRol"/>
+        <action path="/ACrear_rol" parameter="ACrear_rol"
+           type="proyectos.AccionesRol"
+           input="/rol/VCrear_rol_metodologia.jsp"
+           name="FRol"
+           scope="session"/>
+
+
+        <!-- rolActividad -->
+        <action path="/APreCrear_rolActividad" parameter="APreCrear_rolActividad"
+           type="proyectos.AccionesRolActividad"/>
+        <action path="/APreListar_rolActividad" parameter="APreListar_rolActividad"
+           type="proyectos.AccionesRolActividad"/>
+        <action path="/APre_rolActividad" parameter="APre_rolActividad"
+           type="proyectos.AccionesRolActividad"/>
+        <action path="/AAct_rolActividad" parameter="AAct_rolActividad"
+           type="proyectos.AccionesRolActividad"
+           input="/rolActividad/V_rolActividad.jsp"
+           name="FRolActividad"
+           scope="session"/>
+        <action path="/AElim_rolActividad" parameter="AElim_rolActividad"
+           type="proyectos.AccionesRolActividad"/>
+        <action path="/ACrear_rolActividad" parameter="ACrear_rolActividad"
+           type="proyectos.AccionesRolActividad"
+           input="/rolActividad/VCrear_rolActividad.jsp"
+           name="FRolActividad"
+           scope="session"/>
+        <action path="/APreCrear_rolActividad_actividad" parameter="APreCrear_rolActividad_actividad"
+           type="proyectos.AccionesRolActividad"/>
+
+
+        <!-- rolParticipante -->
+        <action path="/APreCrear_rolParticipante_participantes" parameter="APreCrear_rolParticipante_participantes"
+           type="proyectos.AccionesRolParticipante"/>
+        <action path="/APreCrear_rolParticipante_rol" parameter="APreCrear_rolParticipante_rol"
+           type="proyectos.AccionesRolParticipante"/>
+        <action path="/APre_rolParticipante" parameter="APre_rolParticipante"
+           type="proyectos.AccionesRolParticipante"/>
+        <action path="/AAct_rolParticipante" parameter="AAct_rolParticipante"
+           type="proyectos.AccionesRolParticipante"
+           input="/rolParticipante/V_rolParticipante.jsp"
+           name="FRolParticipante"
+           scope="session"/>
+        <action path="/AElim_rolParticipante" parameter="AElim_rolParticipante"
+           type="proyectos.AccionesRolParticipante"/>
+        <action path="/ACrear_rolParticipante" parameter="ACrear_rolParticipante"
+           type="proyectos.AccionesRolParticipante"
+           input="/rolParticipante/VCrear_rolParticipante_participantes.jsp"
+           name="FRolParticipante"
+           scope="session"/>
+
+
+        <!-- CU019 -->
+        <action path="/A_PreCreacionActividad" parameter="A_PreCreacionActividad"
+           type="proyectos.AccionesCU019"/>
+        <action path="/A_CrearActividad" parameter="A_CrearActividad"
+           type="proyectos.AccionesCU019"
+           input="/CU019/V_CreacionActividad.jsp"
+           name="FActividad"
+           scope="session"/>
+
+
+        <!-- CU020 -->
+        <action path="/A_PreConsultaActividad" parameter="A_PreConsultaActividad"
+           type="proyectos.AccionesCU020"/>
+
+
+        <!-- CU023 -->
+        <action path="/A_ModificarActividad" parameter="A_ModificarActividad"
+           type="proyectos.AccionesCU023"
+           input="/CU023/V_ModificarActividad.jsp"
+           name="FActividad"
+           scope="session"/>
+        <action path="/A_PreModificarActividad" parameter="A_PreModificarActividad"
+           type="proyectos.AccionesCU023"/>
+
+
+        <!-- CU024 -->
+        <action path="/A_PreEliminarActividad" parameter="A_PreEliminarActividad"
+           type="proyectos.AccionesCU024"/>
+        <action path="/A_EliminarActividad" parameter="A_EliminarActividad"
+           type="proyectos.AccionesCU024"/>
+
+
+        <!-- CU021 -->
+        <action path="/A_PreActividadesPrecedentes" parameter="A_PreActividadesPrecedentes"
+           type="proyectos.AccionesCU021"/>
+
+
+        <!-- CU022 -->
+        <action path="/A_PreActividadesSucesoras" parameter="A_PreActividadesSucesoras"
+           type="proyectos.AccionesCU022"/>
+
+
+        <!-- CU002 -->
+        <action path="/A_PreIniciarSesion" parameter="A_PreIniciarSesion"
+           type="proyectos.AccionesCU002"/>
+        <action path="/A_IniciarSesion" parameter="A_IniciarSesion"
+           type="proyectos.AccionesCU002"
+           input="/CU002/V_IniciarSesion.jsp"
+           name="FIniciarSesion"
+           scope="session"/>
+        <action path="/A_InicioSistema" parameter="A_InicioSistema"
+           type="proyectos.AccionesCU002"/>
+
+
+        <!-- CU006 -->
+        <action path="/A_PreBusqueda" parameter="A_PreBusqueda"
+           type="proyectos.AccionesCU006"
+           input="/CU030/V_MostrarGrafo.jsp"
+           name="FBusqueda"
+           scope="session"/>
+
+
+        <!-- CU016 -->
+        <action path="/A_PreProyectosParticipante" parameter="A_PreProyectosParticipante"
+           type="proyectos.AccionesCU016"/>
+
+
+        <!-- CU014 -->
+        <action path="/A_PreGestionarActividades" parameter="A_PreGestionarActividades"
+           type="proyectos.AccionesCU014"/>
+
+
+        <!-- CU037 -->
+        <action path="/A_premodificarProyecto" parameter="A_premodificarProyecto"
+           type="proyectos.AccionesCU037"/>
+        <action path="/A_modificarProyecto" parameter="A_modificarProyecto"
+           type="proyectos.AccionesCU037"
+           input="/CU037/V_modificarProyecto.jsp"
+           name="F_ModificarProyecto"
+           scope="session"/>
+
+
+        <!-- CU001 -->
+        <action path="/A_Registrar" parameter="A_Registrar"
+           type="proyectos.AccionesCU001"
+           input="/CU001/V_Registrar.jsp"
+           name="FParticipantes"
+           scope="session"/>
+        <action path="/A_PreRegistrar" parameter="A_PreRegistrar"
+           type="proyectos.AccionesCU001"/>
+
+
+        <!-- CU056 -->
+        <action path="/A_AgregarRolActividad" parameter="A_AgregarRolActividad"
+           type="proyectos.AccionesCU056"/>
+        <action path="/A_PreAgregarRol" parameter="A_PreAgregarRol"
+           type="proyectos.AccionesCU056"/>
+
+
+        <!-- CU010 -->
+        <action path="/A_invitarParticipanteProyecto" parameter="A_invitarParticipanteProyecto"
+           type="proyectos.AccionesCU010"/>
+        <action path="/A_PreInvitarUsuario" parameter="A_PreInvitarUsuario"
+           type="proyectos.AccionesCU010"/>
+
+
+        <!-- CU008 -->
+        <action path="/A_solicitarParticipacionProyecto" parameter="A_solicitarParticipacionProyecto"
+           type="proyectos.AccionesCU008"/>
+
+
+        <!-- CU032 -->
+        <action path="/A_PreListarRoles" parameter="A_PreListarRoles"
+           type="proyectos.AccionesCU032"/>
+
+
+        <!-- CU033 -->
+        <action path="/A_PreListarActividadesRol" parameter="A_PreListarActividadesRol"
+           type="proyectos.AccionesCU033"/>
+
+
+        <!-- CU009 -->
+        <action path="/A_gestionarInvitacionProyecto" parameter="A_gestionarInvitacionProyecto"
+           type="proyectos.AccionesCU009"/>
+        <action path="/A_AceptarInvitacionProyecto" parameter="A_AceptarInvitacionProyecto"
+           type="proyectos.AccionesCU009"/>
+        <action path="/A_DenegarInvitacionProyecto" parameter="A_DenegarInvitacionProyecto"
+           type="proyectos.AccionesCU009"/>
+
+
+        <!-- CU058 -->
+        <action path="/A_PreEditarRol" parameter="A_PreEditarRol"
+           type="proyectos.AccionesCU058"/>
+        <action path="/A_EditarRol" parameter="A_EditarRol"
+           type="proyectos.AccionesCU058"
+           input="/CU058/V_EditarRol.jsp"
+           name="F_EditarRol"
+           scope="session"/>
+
+
+        <!-- CU059 -->
+        <action path="/A_PreEliminarRol" parameter="A_PreEliminarRol"
+           type="proyectos.AccionesCU059"/>
+        <action path="/A_EliminarRol" parameter="A_EliminarRol"
+           type="proyectos.AccionesCU059"/>
+
+
+        <!-- CU027 -->
+        <action path="/A_agregarSubActividad" parameter="A_agregarSubActividad"
+           type="proyectos.AccionesCU027"
+           input="/CU027/V_agregarSubActividad.jsp"
+           name="FActividad"
+           scope="session"/>
+        <action path="/A_PreAgregarSubActividad" parameter="A_PreAgregarSubActividad"
+           type="proyectos.AccionesCU027"/>
+
+
+        <!-- CU036 -->
+        <action path="/A_PreConsultarProyecto" parameter="A_PreConsultarProyecto"
+           type="proyectos.AccionesCU036"/>
+        <action path="/A_EliminarProyecto" parameter="A_EliminarProyecto"
+           type="proyectos.AccionesCU036"/>
+
+
+        <!-- CU041 -->
+        <action path="/A_CrearArtefacto" parameter="A_CrearArtefacto"
+           type="proyectos.AccionesCU041"
+           input="/CU041/V_CrearArtefacto.jsp"
+           name="FArtefacto"
+           scope="session"/>
+        <action path="/A_PreCrearArtefacto" parameter="A_PreCrearArtefacto"
+           type="proyectos.AccionesCU041"/>
+
+
+        <!-- CU042 -->
+        <action path="/A_PreConsultarArtefacto" parameter="A_PreConsultarArtefacto"
+           type="proyectos.AccionesCU042"/>
+        <action path="/A_DescargarArtefacto" parameter="A_DescargarArtefacto"
+           type="proyectos.AccionesCU042"/>
+
+
+        <!-- CU043 -->
+        <action path="/A_ModificarArtefacto" parameter="A_ModificarArtefacto"
+           type="proyectos.AccionesCU043"
+           input="/CU043/V_ModificarArtefacto.jsp"
+           name="FArtefacto"
+           scope="session"/>
+        <action path="/A_PreModificarArtefacto" parameter="A_PreModificarArtefacto"
+           type="proyectos.AccionesCU043"/>
+
+
+        <!-- CU018 -->
+        <action path="/A_ParticipantesRol" parameter="A_ParticipantesRol"
+           type="proyectos.AccionesCU018"/>
+
+
+        <!-- CU056 -->
+        <action path="/A_AgregarRol" parameter="A_AgregarRol"
+           type="proyectos.AccionesCU056"/>
+        <action path="/A_PreAgregarRolx" parameter="A_PreAgregarRolx"
+           type="proyectos.AccionesCU056"
+           input="/NoView.jsp"
+           name="FRol"
+           scope="session"/>
+
+
+        <!-- CU007 -->
+        <action path="/A_PreConsultarPerfil" parameter="A_PreConsultarPerfil"
+           type="proyectos.AccionesCU007"/>
+        <action path="/A_CerrarSesion" parameter="A_CerrarSesion"
+           type="proyectos.AccionesCU007"/>
+
+
+        <!-- CU039 -->
+        <action path="/A_AsignarMetodologia" parameter="A_AsignarMetodologia"
+           type="proyectos.AccionesCU039"/>
+
+
+        <!-- CU057 -->
+        <action path="/A_PreConsultarRol" parameter="A_PreConsultarRol"
+           type="proyectos.AccionesCU057"/>
+        <action path="/A_ConsultarRol" parameter="A_ConsultarRol"
+           type="proyectos.AccionesCU057"/>
+
+
+        <!-- CU005 -->
+        <action path="/A_GestionarUsuarios" parameter="A_GestionarUsuarios"
+           type="proyectos.AccionesCU005"/>
+
+
+        <!-- CU004 -->
+        <action path="/A_PreModificarPerfil" parameter="A_PreModificarPerfil"
+           type="proyectos.AccionesCU004"/>
+        <action path="/A_ModificarPerfil" parameter="A_ModificarPerfil"
+           type="proyectos.AccionesCU004"
+           input="/CU004/V_ModificarPerfil.jsp"
+           name="FParticipantes"
+           scope="session"/>
+
+
+        <!-- CU040 -->
+        <action path="/A_PreGestionarParticipante" parameter="A_PreGestionarParticipante"
+           type="proyectos.AccionesCU040"/>
+
+
+        <!-- CU003 -->
+        <action path="/A_PreRecuperarContrasena" parameter="A_PreRecuperarContrasena"
+           type="proyectos.AccionesCU003"/>
+        <action path="/A_RecuperarContrasena" parameter="A_RecuperarContrasena"
+           type="proyectos.AccionesCU003"
+           input="/CU003/V_RecuperarContrasena.jsp"
+           name="FRecuperarContrasena"
+           scope="session"/>
+
+
+        <!-- CU031 -->
+        <action path="/A_PreGestionParticipantes" parameter="A_PreGestionParticipantes"
+           type="proyectos.AccionesCU031"/>
+
+
+        <!-- CU044 -->
+        <action path="/A_CargaListaAct" parameter="A_CargaListaAct"
+           type="proyectos.AccionesCU044"/>
+
+
+        <!-- CU034 -->
+        <action path="/A_CrearProyecto" parameter="A_CrearProyecto"
+           type="proyectos.AccionesCU034"
+           input="/CU034/V_CrearProyecto.jsp"
+           name="FProyecto"
+           scope="session"/>
+        <action path="/A_PreCrearProyecto" parameter="A_PreCrearProyecto"
+           type="proyectos.AccionesCU034"
+           input="/NoView.jsp"
+           name="F_CrearProyecto"
+           scope="session"/>
+
+
+        <!-- CU035 -->
+        <action path="/A_PreGestionarProyecto" parameter="A_PreGestionarProyecto"
+           type="proyectos.AccionesCU035"/>
+
+
+        <!-- CU048 -->
+        <action path="/A_CargaMetodologia" parameter="A_CargaMetodologia"
+           type="proyectos.AccionesCU048"/>
+        <action path="/A_CargaInfoMetodologia" parameter="A_CargaInfoMetodologia"
+           type="proyectos.AccionesCU048"/>
+
+
+        <!-- CU046 -->
+        <action path="/A_GestionarMetodologia" parameter="A_GestionarMetodologia"
+           type="proyectos.AccionesCU046"/>
+
+
+        <!-- CU049 -->
+        <action path="/A_PreEditarMetodologia" parameter="A_PreEditarMetodologia"
+           type="proyectos.AccionesCU049"/>
+        <action path="/A_EditarMetodologia" parameter="A_EditarMetodologia"
+           type="proyectos.AccionesCU049"
+           input="/CU049/V_EditarMetodologia.jsp"
+           name="FMetodologia"
+           scope="session"/>
+
+
+        <!-- CU050 -->
+        <action path="/A_PreEliminarMetodologia" parameter="A_PreEliminarMetodologia"
+           type="proyectos.AccionesCU050"/>
+        <action path="/A_EliminarMetodologia" parameter="A_EliminarMetodologia"
+           type="proyectos.AccionesCU050"/>
+
+
+        <!-- CU051 -->
+        <action path="/A_PreCambiarEdoMetodologia" parameter="A_PreCambiarEdoMetodologia"
+           type="proyectos.AccionesCU051"/>
+        <action path="/A_CambiarEdoMetologia" parameter="A_CambiarEdoMetologia"
+           type="proyectos.AccionesCU051"/>
+
+
+        <!-- CU025 -->
+
+        <!-- CU047 -->
+        <action path="/A_PreCrearMetodologia" parameter="A_PreCrearMetodologia"
+           type="proyectos.AccionesCU047"
+           input="/CU046/V_GestionarMetodologia.jsp"
+           name="FMetodologia"
+           scope="session"/>
+        <action path="/A_CrearMetodologia" parameter="A_CrearMetodologia"
+           type="proyectos.AccionesCU047"
+           input="/CU047/V_CrearMetodologia.jsp"
+           name="FMetodologia"
+           scope="session"/>
+
+
+        <!-- CU052 -->
+        <action path="/A_PreAgregarProcesoSoftware" parameter="A_PreAgregarProcesoSoftware"
+           type="proyectos.AccionesCU052"/>
+        <action path="/A_AgregarProcesoSoftware" parameter="A_AgregarProcesoSoftware"
+           type="proyectos.AccionesCU052"/>
+
+
+        <!-- CU055 -->
+        <action path="/A_PreEliminarProcesoSoftware" parameter="A_PreEliminarProcesoSoftware"
+           type="proyectos.AccionesCU055"/>
+        <action path="/A_EliminarProcesoSoftware" parameter="A_EliminarProcesoSoftware"
+           type="proyectos.AccionesCU055"/>
+
+
+        <!-- CU054 -->
+        <action path="/A_PreEditarProcesoSoftware" parameter="A_PreEditarProcesoSoftware"
+           type="proyectos.AccionesCU054"/>
+        <action path="/A_EditarProcesoSoftware" parameter="A_EditarProcesoSoftware"
+           type="proyectos.AccionesCU054"/>
+
+
+        <!-- CU028 -->
+        <action path="/A_PreAsignarPrecedente" parameter="A_PreAsignarPrecedente"
+           type="proyectos.AccionesCU028"/>
+        <action path="/A_AsignarPrecedente" parameter="A_AsignarPrecedente"
+           type="proyectos.AccionesCU028"/>
+
+
+        <!-- CU012 -->
+        <action path="/A_PreEliminarParticipanteProy" parameter="A_PreEliminarParticipanteProy"
+           type="proyectos.AccionesCU012"/>
+        <action path="/A_EliminarParticipanteProy" parameter="A_EliminarParticipanteProy"
+           type="proyectos.AccionesCU012"/>
+
+
+        <!-- CU029 -->
+        <action path="/A_PreAsignarSucesora" parameter="A_PreAsignarSucesora"
+           type="proyectos.AccionesCU029"/>
+        <action path="/A_AsignarSucesora" parameter="A_AsignarSucesora"
+           type="proyectos.AccionesCU029"/>
+
+
+        <!-- CU030 -->
+        <action path="/A_PreMostrarGrafo" parameter="A_PreMostrarGrafo"
+           type="proyectos.AccionesCU030"/>
+
+
+        <!-- CU011 -->
+        <action path="/A_PreAsignarRol" parameter="A_PreAsignarRol"
+           type="proyectos.AccionesCU011"/>
+        <action path="/A_AsignarRol" parameter="A_AsignarRol"
+           type="proyectos.AccionesCU011"/>
+
+
+        <!-- CU013 -->
+        <action path="/A_PreAbandonar" parameter="A_PreAbandonar"
+           type="proyectos.AccionesCU013"/>
+        <action path="/A_Abandonar" parameter="A_Abandonar"
+           type="proyectos.AccionesCU013"/>
+
+
+        <!-- CU053 -->
+        <action path="/A_PreConsultarProceso" parameter="A_PreConsultarProceso"
+           type="proyectos.AccionesCU053"/>
+
+
+        <action path="/tooltip" parameter="tooltip"
+           type="proyectos.Acciones_tooltips"/>
+    </action-mappings>
+    
+    <!--
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+    -->
+    
+    <message-resources parameter="proyectos/ApplicationResource"/>
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <!--
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    -->
+    <!-- ========================= Validator plugin ================================= -->
+    <!--
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+    -->
+</struts-config>
